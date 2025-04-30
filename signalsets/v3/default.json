@@ -74,9 +74,24 @@
   "signals": [
     {"id": "HYUNDAI_FLI_VOL",         "path": "Fuel",       "fmt": {"bix": 32, "len": 8,  "max": 255,                     "unit": "liters"     }, "name": "Fuel level (volume)"},
     {"id": "HYUNDAI_CLUSTER_VOLTAGE", "path": "Electrical", "fmt": {"bix": 40, "len": 8,  "max": 18,         "div": 12.8, "unit": "volts"      }, "name": "Cluster Voltage"},
+    {"id": "HYUNDAI_VPWR",            "path": "Battery",    "fmt": {"bix": 40, "len": 8,  "max": 18,         "div": 12.8, "unit": "volts"      }, "name": "12v battery voltage", "suggestedMetric": "starterBatteryVoltage"},
     {"id": "HYUNDAI_ODO_KM",          "path": "Trips",      "fmt": {"bix": 48, "len": 24, "max": 4294967295,              "unit": "kilometers" }, "name": "Odometer (Metric)",   "suggestedMetric": "odometer"},
     {"id": "HYUNDAI_ODO",             "path": "Trips",      "fmt": {"bix": 48, "len": 24, "max": 4294967295,              "unit": "kilometers" }, "name": "Odometer",            "suggestedMetric": "odometer"},
     {"id": "HYUNDAI_ODO_MI",          "path": "Trips",      "fmt": {"bix": 72, "len": 24, "max": 4294967295,              "unit": "miles"      }, "name": "Odometer (Imperial)", "suggestedMetric": "odometer"}
+  ]},
+{ "hdr": "7D1", "dbg": true, "cmd": {"22": "4000"}, "freq": 1,
+  "signals": [
+    {"id": "HYUNDAI_TIRE_FL_VSS", "path": "Movement", "fmt": {"bix": 48, "len": 8, "max": 215, "min": -50, "add": -50, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "HYUNDAI_TIRE_FR_VSS", "path": "Movement", "fmt": {"bix": 56, "len": 8, "max": 255, "min": -50, "add": -50, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "HYUNDAI_TIRE_RL_VSS", "path": "Movement", "fmt": {"bix": 64, "len": 8, "max": 255, "min": -50, "add": -50, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "HYUNDAI_TIRE_RR_VSS", "path": "Movement", "fmt": {"bix": 72, "len": 8, "max": 255, "min": -50, "add": -50, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
+  ]},
+{ "hdr": "7D1", "rax": "7D9", "dbg": true, "cmd": {"21": "01"}, "freq": 0.25,
+  "signals": [
+    {"id": "HYUNDAI_FL_VSS", "path": "Movement", "fmt": {"bix": 88,  "len": 8, "max": 127.5, "min": -127.5, "sign": true, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "HYUNDAI_FR_VSS", "path": "Movement", "fmt": {"bix": 96,  "len": 8, "max": 127.5, "min": -127.5, "sign": true, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "HYUNDAI_RL_VSS", "path": "Movement", "fmt": {"bix": 104, "len": 8, "max": 127.5, "min": -127.5, "sign": true, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "HYUNDAI_RR_VSS", "path": "Movement", "fmt": {"bix": 112, "len": 8, "max": 127.5, "min": -127.5, "sign": true, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
   ]},
 { "hdr": "7D1", "rax": "7D9", "dbg": true, "cmd": {"22": "0104"}, "freq": 1,
   "signals": [
@@ -104,6 +119,17 @@
     {"id": "HYUNDAI_BMS_MOD3_TEMP",  "path": "Battery", "fmt": {"bix": 144, "len": 8,  "max": 80,     "min": -40,             "sign": true, "unit": "celsius"   }, "name": "BMS Battery Mod 3 Temp"},
     {"id": "HYUNDAI_BMS_MOD4_TEMP",  "path": "Battery", "fmt": {"bix": 152, "len": 8,  "max": 80,     "min": -40,             "sign": true, "unit": "celsius"   }, "name": "BMS Battery Mod 4 Temp"}
   ]},
+{ "hdr": "7E0", "rax": "7D8", "dbg": true, "cmd": {"21": "01"}, "freq": 1,
+  "signals": [
+    {"id": "HYUNDAI_MIS_1", "path": "Engine", "fmt": {"bix": 56,  "len": 16, "blsb": true, "max": 65535, "unit": "scalar" }, "name": "Misfire count #1"},
+    {"id": "HYUNDAI_MIS_2", "path": "Engine", "fmt": {"bix": 72,  "len": 16, "blsb": true, "max": 65535, "unit": "scalar" }, "name": "Misfire count #2"},
+    {"id": "HYUNDAI_MIS_3", "path": "Engine", "fmt": {"bix": 88,  "len": 16, "blsb": true, "max": 65535, "unit": "scalar" }, "name": "Misfire count #3"},
+    {"id": "HYUNDAI_MIS_4", "path": "Engine", "fmt": {"bix": 104, "len": 16, "blsb": true, "max": 65535, "unit": "scalar" }, "name": "Misfire count #4"}
+  ]},
+{ "hdr": "7E0", "rax": "7D8", "dbg": true, "cmd": {"21": "18"}, "freq": 0.25,
+  "signals": [
+    {"id": "HYUNDAI_CVVT_T", "path": "Engine", "fmt": {"bix": 272, "len": 8, "max": 207, "min": -48, "add": -48, "unit": "celsius" }, "name": "CVVT temperature", "description": "Continuously variable valve timing temperature."}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "E001"}, "freq": 1,
   "signals": [
     {"id": "HYUNDAI_INTAKE_TEMP", "path": "Engine", "fmt": {"bix": 264, "len": 8, "max": 207, "div": 1.3333, "add": -48, "unit": "celsius" }, "name": "Intake Air Temperature"},
@@ -118,6 +144,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "E004"}, "freq": 5,
   "signals": [
+    {"id": "HYUNDAI_22E004",  "path": "Unknown", "fmt": {            "len": 8, "max": 100, "unit": "scalar"  }, "name": "Unknown"},
     {"id": "HYUNDAI_AUX_SOC", "path": "Battery", "fmt": {"bix": 320, "len": 8, "max": 100, "unit": "percent" }, "name": "Aux Battery SOC"},
     {"id": "HYUNDAI_AUX_SOH", "path": "Battery", "fmt": {"bix": 328, "len": 8, "max": 100, "unit": "percent" }, "name": "Aux Battery SOH"}
   ]},
@@ -135,6 +162,25 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "ED02"}, "freq": 1,
   "signals": [
     {"id": "HYUNDAI_EOT", "path": "Engine", "fmt": {"bix": 184, "len": 8, "max": 215, "min": -40, "add": -4, "unit": "celsius" }, "name": "Engine oil temperature"}
+  ]},
+{ "hdr": "7E1", "dbg": true, "cmd": {"22": "01A4"}, "freq": 1,
+  "signals": [
+    {"id": "HYUNDAI_GEAR_CUR",   "path": "Transmission", "fmt": {"bix": 188, "len": 4,  "max": 15,                                    "unit": "scalar"  }, "name": "Current gear"},
+    {"id": "HYUNDAI_GEAR_NXT",   "path": "Transmission", "fmt": {"bix": 196, "len": 4,  "max": 15,                                    "unit": "scalar"  }, "name": "Next gear"},
+    {"id": "HYUNDAI_CLUTCH_1_T", "path": "Transmission", "fmt": {"bix": 232, "len": 16, "max": 300, "min": -40, "mul": 2, "add": -40, "unit": "celsius" }, "name": "Clutch #1 temperature", "description": "Part of the dual clutch transition"},
+    {"id": "HYUNDAI_CLUTCH_2_T", "path": "Transmission", "fmt": {"bix": 248, "len": 16, "max": 300, "min": -40, "mul": 2, "add": -40, "unit": "celsius" }, "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"21": "A0"}, "freq": 1,
+  "signals": [
+    {"id": "HYUNDAI_VSS",   "path": "Transmission", "fmt": {"bix": 48,  "len": 8, "max": 255,                         "unit": "kilometersPerHour" }, "name": "Vehicle speed",                            "suggestedMetric": "speed"},
+    {"id": "HYUNDAI_ATF_T", "path": "Transmission", "fmt": {"bix": 104, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius"           }, "name": "Automatic transmission fluid temperature"},
+    {"id": "HYUNDAI_GEAR", "path": "Transmission", "name": "Current gear", "description": "The automatic transmission gear.", "fmt": {"bix": 152, "len": 8, "map": {
+          "1": { "description": "Neutral", "value": "NEUTRAL" },
+          "2": { "description": "Reverse", "value": "REVERSE" },
+          "3": { "description": "Park",    "value": "PARK" },
+          "4": { "description": "Manual",  "value": "MANUAL" }
+        }}
+    }
   ]},
 { "hdr": "7E2", "rax": "7EA", "dbg": true, "cmd": {"21": "01"}, "freq": 0.25,
   "signals": [

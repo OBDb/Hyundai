@@ -12,7 +12,7 @@
     {"id": "HYUNDAI_HVBAT_CHRG_CNT",    "path": "Battery", "fmt": {"bix": 256, "len": 16, "max": 65535,            "unit": "scalar"  }, "name": "Number of DC charges"},
     {"id": "HYUNDAI_DC_CHRG_TIME",      "path": "Battery", "fmt": {"bix": 288, "len": 16, "max": 65535,            "unit": "hours"   }, "name": "Total DC charging time"}
   ]},
-{ "hdr": "770", "rax": "778", "dbg": true, "cmd": {"22": "BC03"}, "freq": 1,
+{ "hdr": "770", "rax": "778", "dbg": true, "cmd": {"22": "BC03"}, "freq": 1, "filter": { "from": 2021 },
   "signals": [
     {"id": "HYUNDAI_TRUNK",          "path": "Doors",     "fmt": {"bix": 32, "len": 1, "max": 1, "unit": "noyes" }, "name": "Trunk open?"},
     {"id": "HYUNDAI_DOOR_FL",        "path": "Doors",     "fmt": {"bix": 34, "len": 1, "max": 1, "unit": "noyes" }, "name": "Front left door open?"},
@@ -27,7 +27,7 @@
     {"id": "HYUNDAI_HOOD",           "path": "Doors",     "fmt": {"bix": 47, "len": 1, "max": 1, "unit": "noyes" }, "name": "Hood latched?"},
     {"id": "HYUNDAI_DEFOG_SW",       "path": "Climate",   "fmt": {"bix": 62, "len": 1, "max": 1, "unit": "noyes" }, "name": "Defogging?"}
   ]},
-{ "hdr": "770", "rax": "778", "dbg": true, "cmd": {"22": "BC04"}, "freq": 1,
+{ "hdr": "770", "rax": "778", "dbg": true, "cmd": {"22": "BC04"}, "freq": 1, "filter": { "from": 2021 },
   "signals": [
     {"id": "HYUNDAI_GEAR_R",       "path": "Transmission", "fmt": {"bix": 35, "len": 1, "max": 1, "unit": "noyes"  }, "name": "Reverse gear selected"},
     {"id": "HYUNDAI_LOCK_FL",      "path": "Doors",        "fmt": {"bix": 36, "len": 1, "max": 1, "unit": "scalar" }, "name": "Front left door locked?"},
@@ -37,39 +37,47 @@
     {"id": "HYUNDAI_BELT_RL",      "path": "Seatbelts",    "fmt": {"bix": 53, "len": 1, "max": 1, "unit": "noyes"  }, "name": "Rear left seatbelt latched?"},
     {"id": "HYUNDAI_BELT_RR",      "path": "Seatbelts",    "fmt": {"bix": 54, "len": 1, "max": 1, "unit": "noyes"  }, "name": "Rear right seatbelt latched?"}
   ]},
-{ "hdr": "770", "rax": "778", "dbg": true, "cmd": {"22": "BC05"}, "freq": 1,
+{ "hdr": "770", "rax": "778", "dbg": true, "cmd": {"22": "BC05"}, "freq": 1, "filter": { "from": 2021 },
   "signals": [
     {"id": "HYUNDAI_HAZARD_SW", "path": "Lights", "fmt": {"bix": 32, "len": 8, "max": 255,                             "unit": "scalar" }, "name": "Hazard switch"},
     {"id": "HYUNDAI_HL_SW",     "path": "Lights", "fmt": {"bix": 48, "len": 8, "max": 1,   "nullmin": 0, "nullmax": 2, "unit": "noyes"  }, "name": "Headlight switch (raw >2)"}
   ]},
-{ "hdr": "770", "rax": "778", "dbg": true, "cmd": {"22": "BC07"}, "freq": 1,
+{ "hdr": "770", "rax": "778", "dbg": true, "cmd": {"22": "BC07"}, "freq": 1, "filter": { "from": 2021 },
   "signals": [
     {"id": "HYUNDAI_DEFOG_LIGHT", "path": "Climate", "fmt": {"bix": 40, "len": 8, "max": 1, "unit": "noyes" }, "name": "Defog light on"}
   ]},
-{ "hdr": "770", "rax": "778", "dbg": true, "cmd": {"22": "BC08"}, "freq": 2,
+{ "hdr": "770", "rax": "778", "dbg": true, "cmd": {"22": "BC08"}, "freq": 2, "filter": { "from": 2021 },
   "signals": [
     {"id": "HYUNDAI_TURN_L", "path": "Lights", "fmt": {"bix": 32, "len": 8, "max": 1, "nullmin": 0, "nullmax": 1, "unit": "noyes" }, "name": "Left turn signal on? (raw >1)"},
     {"id": "HYUNDAI_TURN_R", "path": "Lights", "fmt": {"bix": 32, "len": 8, "max": 1, "nullmin": 0, "nullmax": 3, "unit": "noyes" }, "name": "Right turn signal on? (raw >3)"}
   ]},
-{ "hdr": "770", "rax": "778", "dbg": true, "cmd": {"22": "BC09"}, "freq": 1,
+{ "hdr": "770", "rax": "778", "dbg": true, "cmd": {"22": "BC09"}, "freq": 1, "filter": { "from": 2021 },
   "signals": [
     {"id": "HYUNDAI_HL_HIGH", "path": "Lights", "fmt": {"bix": 48, "len": 8, "max": 1, "div": 12, "unit": "noyes" }, "name": "Headlight high beam on"},
     {"id": "HYUNDAI_HL_LOW",  "path": "Lights", "fmt": {"bix": 56, "len": 8, "max": 1, "div": 12, "unit": "noyes" }, "name": "Headlight low beam on"}
   ]},
-{ "hdr": "7A0", "rax": "7A8", "dbg": true, "cmd": {"22": "C00B"}, "freq": 15,
+{ "hdr": "7A0", "rax": "7A8", "dbg": true, "cmd": {"22": "C00B"}, "freq": 1, "filter": { "to": 2020 },
   "signals": [
-    {"id": "HYUNDAI_TP_FL", "path": "Tires", "fmt": {"bix": 32,  "len": 8, "max": 51,              "div": 5,             "unit": "psi"     }, "name": "Tire pressure front left",     "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "HYUNDAI_TT_FL", "path": "Tires", "fmt": {"bix": 40,  "len": 8, "max": 100, "min": -50,           "add": -50, "unit": "celsius" }, "name": "Tire temperature front left"},
-    {"id": "HYUNDAI_TW_FL", "path": "Tires", "fmt": {"bix": 56,  "len": 8, "max": 1,                                     "unit": "noyes"   }, "name": "Tire alert front left"},
-    {"id": "HYUNDAI_TP_FR", "path": "Tires", "fmt": {"bix": 72,  "len": 8, "max": 51,              "div": 5,             "unit": "psi"     }, "name": "Tire pressure front right",    "suggestedMetric": "frontRightTirePressure"},
-    {"id": "HYUNDAI_TT_FR", "path": "Tires", "fmt": {"bix": 80,  "len": 8, "max": 100, "min": -50,           "add": -50, "unit": "celsius" }, "name": "Tire temperature front right"},
-    {"id": "HYUNDAI_TW_FR", "path": "Tires", "fmt": {"bix": 96,  "len": 8, "max": 1,                                     "unit": "noyes"   }, "name": "Tire alert front right"},
-    {"id": "HYUNDAI_TP_RR", "path": "Tires", "fmt": {"bix": 112, "len": 8, "max": 51,              "div": 5,             "unit": "psi"     }, "name": "Tire pressure rear right",     "suggestedMetric": "rearRightTirePressure"},
-    {"id": "HYUNDAI_TT_RR", "path": "Tires", "fmt": {"bix": 120, "len": 8, "max": 100, "min": -50,           "add": -50, "unit": "celsius" }, "name": "Tire temperature rear right"},
-    {"id": "HYUNDAI_TW_RR", "path": "Tires", "fmt": {"bix": 136, "len": 8, "max": 1,                                     "unit": "noyes"   }, "name": "Tire alert rear right"},
-    {"id": "HYUNDAI_TP_RL", "path": "Tires", "fmt": {"bix": 152, "len": 8, "max": 51,              "div": 5,             "unit": "psi"     }, "name": "Tire pressure rear left",      "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "HYUNDAI_TT_RL", "path": "Tires", "fmt": {"bix": 160, "len": 8, "max": 100, "min": -50,           "add": -50, "unit": "celsius" }, "name": "Tire temperature rear left"},
-    {"id": "HYUNDAI_TW_RL", "path": "Tires", "fmt": {"bix": 176, "len": 8, "max": 1,                                     "unit": "noyes"   }, "name": "Tire alert rear left"},
+    {"id": "HYUNDAI_TP_FL_PRE21", "path": "Tires", "fmt": {"bix": 32,  "len": 8, "max": 51,              "div": 5,             "unit": "psi"     }, "name": "Tire pressure front left",     "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "HYUNDAI_TP_FL",       "path": "Tires", "fmt": {"bix": 32,  "len": 8, "max": 51,              "div": 5,             "unit": "psi"     }, "name": "Tire pressure front left",     "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "HYUNDAI_TT_FL_PRE21", "path": "Tires", "fmt": {"bix": 40,  "len": 8, "max": 205, "min": -50,           "add": -50, "unit": "celsius" }, "name": "Tire temperature front left"},
+    {"id": "HYUNDAI_TT_FL",       "path": "Tires", "fmt": {"bix": 40,  "len": 8, "max": 100, "min": -50,           "add": -50, "unit": "celsius" }, "name": "Tire temperature front left"},
+    {"id": "HYUNDAI_TW_FL",       "path": "Tires", "fmt": {"bix": 56,  "len": 8, "max": 1,                                     "unit": "noyes"   }, "name": "Tire alert front left"},
+    {"id": "HYUNDAI_TP_FR_PRE21", "path": "Tires", "fmt": {"bix": 64,  "len": 8, "max": 51,              "div": 5,             "unit": "psi"     }, "name": "Tire pressure front right",    "suggestedMetric": "frontRightTirePressure"},
+    {"id": "HYUNDAI_TT_FR_PRE21", "path": "Tires", "fmt": {"bix": 72,  "len": 8, "max": 205, "min": -50,           "add": -50, "unit": "celsius" }, "name": "Tire temperature front right"},
+    {"id": "HYUNDAI_TP_FR",       "path": "Tires", "fmt": {"bix": 72,  "len": 8, "max": 51,              "div": 5,             "unit": "psi"     }, "name": "Tire pressure front right",    "suggestedMetric": "frontRightTirePressure"},
+    {"id": "HYUNDAI_TT_FR",       "path": "Tires", "fmt": {"bix": 80,  "len": 8, "max": 100, "min": -50,           "add": -50, "unit": "celsius" }, "name": "Tire temperature front right"},
+    {"id": "HYUNDAI_TP_RR_PRE21", "path": "Tires", "fmt": {"bix": 96,  "len": 8, "max": 51,              "div": 5,             "unit": "psi"     }, "name": "Tire pressure rear right",     "suggestedMetric": "rearRightTirePressure"},
+    {"id": "HYUNDAI_TW_FR",       "path": "Tires", "fmt": {"bix": 96,  "len": 8, "max": 1,                                     "unit": "noyes"   }, "name": "Tire alert front right"},
+    {"id": "HYUNDAI_TT_RR_PRE21", "path": "Tires", "fmt": {"bix": 104, "len": 8, "max": 205, "min": -50,           "add": -50, "unit": "celsius" }, "name": "Tire temperature rear right"},
+    {"id": "HYUNDAI_TP_RR",       "path": "Tires", "fmt": {"bix": 112, "len": 8, "max": 51,              "div": 5,             "unit": "psi"     }, "name": "Tire pressure rear right",     "suggestedMetric": "rearRightTirePressure"},
+    {"id": "HYUNDAI_TT_RR",       "path": "Tires", "fmt": {"bix": 120, "len": 8, "max": 100, "min": -50,           "add": -50, "unit": "celsius" }, "name": "Tire temperature rear right"},
+    {"id": "HYUNDAI_TP_RL_PRE21", "path": "Tires", "fmt": {"bix": 128, "len": 8, "max": 51,              "div": 5,             "unit": "psi"     }, "name": "Tire pressure rear left",      "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "HYUNDAI_TT_RL_PRE21", "path": "Tires", "fmt": {"bix": 136, "len": 8, "max": 205, "min": -50,           "add": -50, "unit": "celsius" }, "name": "Tire temperature rear left)"},
+    {"id": "HYUNDAI_TW_RR",       "path": "Tires", "fmt": {"bix": 136, "len": 8, "max": 1,                                     "unit": "noyes"   }, "name": "Tire alert rear right"},
+    {"id": "HYUNDAI_TP_RL",       "path": "Tires", "fmt": {"bix": 152, "len": 8, "max": 51,              "div": 5,             "unit": "psi"     }, "name": "Tire pressure rear left",      "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "HYUNDAI_TT_RL",       "path": "Tires", "fmt": {"bix": 160, "len": 8, "max": 100, "min": -50,           "add": -50, "unit": "celsius" }, "name": "Tire temperature rear left"},
+    {"id": "HYUNDAI_TW_RL",       "path": "Tires", "fmt": {"bix": 176, "len": 8, "max": 1,                                     "unit": "noyes"   }, "name": "Tire alert rear left"},
     {"id": "HYUNDAI_TB_FL", "path": "Tires", "name": "Tire battery front left", "fmt": {"bix": 48, "len": 8, "map": {
           "0": { "description": ">3 V",        "value": "3V+" },
           "1": { "description": "2.7 - 3 V",   "value": "27_3V" },
@@ -99,13 +107,13 @@
         }}
     }
   ]},
-{ "hdr": "7B3", "rax": "7BB", "fcm1": true, "dbg": true, "cmd": {"22": "0100"}, "freq": 0.5,
+{ "hdr": "7B3", "rax": "7BB", "fcm1": true, "dbg": true, "cmd": {"22": "0100"}, "freq": 0.5, "dbgfilter": { "to": 2019, "years": [2023] },
   "signals": [
     {"id": "HYUNDAI_TEMP_INT", "path": "Climate",  "fmt": {"bix": 40,  "len": 8, "max": 80,  "min": -40, "div": 2, "add": -40, "unit": "celsius"           }, "name": "Interior Temperature"},
     {"id": "HYUNDAI_TEMP_EXT", "path": "Climate",  "fmt": {"bix": 48,  "len": 8, "max": 80,  "min": -40, "div": 2, "add": -40, "unit": "celsius"           }, "name": "Exterior Temperature"},
     {"id": "HYUNDAI_VSS",      "path": "Movement", "fmt": {"bix": 232, "len": 8, "max": 255,                                   "unit": "kilometersPerHour" }, "name": "Vehicle speed",        "suggestedMetric": "speed"}
   ]},
-{ "hdr": "7C6", "rax": "7CE", "dbg": true, "cmd": {"22": "B002"}, "freq": 1,
+{ "hdr": "7C6", "rax": "7CE", "dbg": true, "cmd": {"22": "B002"}, "freq": 1, "dbgfilter": { "to": 2018, "years": [2020] },
   "signals": [
     {"id": "HYUNDAI_FLI_VOL",         "path": "Fuel",       "fmt": {"bix": 32, "len": 8,  "max": 255,                     "unit": "liters"     }, "name": "Fuel level (volume)"},
     {"id": "HYUNDAI_CLUSTER_VOLTAGE", "path": "Electrical", "fmt": {"bix": 40, "len": 8,  "max": 18,         "div": 12.8, "unit": "volts"      }, "name": "Cluster voltage"},
@@ -128,7 +136,7 @@
     {"id": "HYUNDAI_RL_VSS", "path": "Movement", "fmt": {"bix": 104, "len": 8, "max": 127.5, "min": -127.5, "sign": true, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
     {"id": "HYUNDAI_RR_VSS", "path": "Movement", "fmt": {"bix": 112, "len": 8, "max": 127.5, "min": -127.5, "sign": true, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
   ]},
-{ "hdr": "7D1", "rax": "7D9", "dbg": true, "cmd": {"22": "0104"}, "freq": 1,
+{ "hdr": "7D1", "rax": "7D9", "dbg": true, "cmd": {"22": "0104"}, "freq": 1, "dbgfilter": { "to": 2018, "years": [2020] },
   "signals": [
     {"id": "HYUNDAI_VSS_AVG",     "path": "Movement", "fmt": {"bix": 48,  "len": 8,  "max": 255,                                               "unit": "kilometersPerHour" }, "name": "ABS speed (avg)"},
     {"id": "HYUNDAI_TIRE_FL_VSS", "path": "Movement", "fmt": {"bix": 88,  "len": 8,  "max": 255,                                               "unit": "kilometersPerHour" }, "name": "ABS speed front left"},
@@ -143,7 +151,7 @@
   "signals": [
     {"id": "HYUNDAI_STEER_ANGLE_V2", "path": "Control", "fmt": {"bix": 72, "len": 16, "max": 3276, "min": -3276, "div": 10, "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"}
   ]},
-{ "hdr": "7D4", "rax": "7DC", "dbg": true, "cmd": {"22": "0101"}, "freq": 5,
+{ "hdr": "7D4", "rax": "7DC", "dbg": true, "cmd": {"22": "0101"}, "freq": 5, "dbgfilter": { "to": 2018, "years": [2020] },
   "signals": [
     {"id": "HYUNDAI_BMS_SOC",        "path": "Battery", "fmt": {"bix": 32,  "len": 8,  "max": 100,                "div": 2,                 "unit": "percent"   }, "name": "BMS state of charge"},
     {"id": "HYUNDAI_BMS_CHG_PWR",    "path": "Battery", "fmt": {"bix": 40,  "len": 16, "max": 655.35,             "div": 100,               "unit": "kilowatts" }, "name": "BMS available charge power"},
@@ -153,17 +161,6 @@
     {"id": "HYUNDAI_BMS_MOD2_TEMP",  "path": "Battery", "fmt": {"bix": 136, "len": 8,  "max": 80,     "min": -40,             "sign": true, "unit": "celsius"   }, "name": "BMS battery mod 2 temp"},
     {"id": "HYUNDAI_BMS_MOD3_TEMP",  "path": "Battery", "fmt": {"bix": 144, "len": 8,  "max": 80,     "min": -40,             "sign": true, "unit": "celsius"   }, "name": "BMS battery mod 3 temp"},
     {"id": "HYUNDAI_BMS_MOD4_TEMP",  "path": "Battery", "fmt": {"bix": 152, "len": 8,  "max": 80,     "min": -40,             "sign": true, "unit": "celsius"   }, "name": "BMS battery mod 4 temp"}
-  ]},
-{ "hdr": "7D6", "dbg": true, "cmd": {"21": "06"}, "freq": 15,
-  "signals": [
-    {"id": "HYUNDAI_TIRE_1_P", "path": "Tires", "fmt": {            "len": 16, "max": 100,              "div": 10,               "unit": "kilopascal" }, "name": "Tire 1 pressure"},
-    {"id": "HYUNDAI_TIRE_1_T", "path": "Tires", "fmt": {"bix": 16,  "len": 16, "max": 100, "min": -100,            "sign": true, "unit": "celsius"    }, "name": "Tire 1 temperature"},
-    {"id": "HYUNDAI_TIRE_2_P", "path": "Tires", "fmt": {"bix": 48,  "len": 16, "max": 100,              "div": 10,               "unit": "kilopascal" }, "name": "Tire 2 pressure"},
-    {"id": "HYUNDAI_TIRE_2_T", "path": "Tires", "fmt": {"bix": 64,  "len": 16, "max": 100, "min": -100,            "sign": true, "unit": "celsius"    }, "name": "Tire 2 temperature"},
-    {"id": "HYUNDAI_TIRE_3_P", "path": "Tires", "fmt": {"bix": 96,  "len": 16, "max": 100,              "div": 10,               "unit": "kilopascal" }, "name": "Tire 3 pressure"},
-    {"id": "HYUNDAI_TIRE_3_T", "path": "Tires", "fmt": {"bix": 112, "len": 16, "max": 100, "min": -100,            "sign": true, "unit": "celsius"    }, "name": "Tire 3 temperature"},
-    {"id": "HYUNDAI_TIRE_4_P", "path": "Tires", "fmt": {"bix": 144, "len": 16, "max": 100,              "div": 10,               "unit": "kilopascal" }, "name": "Tire 4 pressure"},
-    {"id": "HYUNDAI_TIRE_4_T", "path": "Tires", "fmt": {"bix": 160, "len": 16, "max": 100, "min": -100,            "sign": true, "unit": "celsius"    }, "name": "Tire 4 temperature"}
   ]},
 { "hdr": "7E0", "rax": "7D8", "dbg": true, "cmd": {"21": "01"}, "freq": 1,
   "signals": [
@@ -176,25 +173,27 @@
   "signals": [
     {"id": "HYUNDAI_CVVT_T", "path": "Engine", "fmt": {"bix": 272, "len": 8, "max": 207, "min": -48, "add": -48, "unit": "celsius" }, "name": "CVVT temperature", "description": "Continuously variable valve timing temperature."}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "E001"}, "freq": 1,
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "E001"}, "freq": 5, "dbgfilter": { "to": 2018, "years": [2023] },
   "signals": [
-    {"id": "HYUNDAI_INTAKE_TEMP", "path": "Engine", "fmt": {"bix": 264, "len": 8, "max": 143, "min": -48, "div": 1.3333, "add": -48, "unit": "celsius" }, "name": "Intake air temperature"},
-    {"id": "HYUNDAI_OIL_TEMP",    "path": "Engine", "fmt": {"bix": 272, "len": 8, "max": 143, "min": -48, "div": 1.3333, "add": -48, "unit": "celsius" }, "name": "Engine oil temperature"}
+    {"id": "HYUNDAI_EIT",         "path": "Engine", "fmt": {"bix": 264, "len": 8, "max": 143,        "min": -48, "mul": 3, "div": 4,      "add": -48, "unit": "celsius" }, "name": "Intake air temperature"},
+    {"id": "HYUNDAI_INTAKE_TEMP", "path": "Engine", "fmt": {"bix": 264, "len": 8, "max": 143.254781,                       "div": 1.3333, "add": -48, "unit": "celsius" }, "name": "Intake Air Temperature"},
+    {"id": "HYUNDAI_EOT",         "path": "Engine", "fmt": {"bix": 272, "len": 8, "max": 143,        "min": -48, "mul": 3, "div": 4,      "add": -48, "unit": "celsius" }, "name": "Engine oil temperature"},
+    {"id": "HYUNDAI_OIL_TEMP",    "path": "Engine", "fmt": {"bix": 272, "len": 8, "max": 143.254781,                       "div": 1.3333, "add": -48, "unit": "celsius" }, "name": "Engine Oil Temperature"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "E002"}, "freq": 5,
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "E002"}, "freq": 5, "dbgfilter": { "to": 2018, "years": [2023] },
   "signals": [
     {"id": "HYUNDAI_INJ_DUR_1", "path": "Engine", "fmt": {"bix": 176, "len": 16, "blsb": true, "max": 53, "div": 1220.7, "unit": "seconds" }, "name": "Injection duration cyl 1"},
     {"id": "HYUNDAI_INJ_DUR_2", "path": "Engine", "fmt": {"bix": 192, "len": 16, "blsb": true, "max": 53, "div": 1220.7, "unit": "seconds" }, "name": "Injection duration cyl 2"},
     {"id": "HYUNDAI_INJ_DUR_3", "path": "Engine", "fmt": {"bix": 208, "len": 16, "blsb": true, "max": 53, "div": 1220.7, "unit": "seconds" }, "name": "Injection duration cyl 3"},
     {"id": "HYUNDAI_INJ_DUR_4", "path": "Engine", "fmt": {"bix": 224, "len": 16, "blsb": true, "max": 53, "div": 1220.7, "unit": "seconds" }, "name": "Injection duration cyl 4"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "E004"}, "freq": 5,
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "E004"}, "freq": 5, "filter": { "from": 2021 },
   "signals": [
     {"id": "HYUNDAI_22E004",  "path": "Engine.Unknown", "fmt": {            "len": 8, "max": 100, "unit": "scalar"  }, "name": "Unknown"},
     {"id": "HYUNDAI_AUX_SOC", "path": "Battery",        "fmt": {"bix": 320, "len": 8, "max": 100, "unit": "percent" }, "name": "Aux battery state of charge"},
     {"id": "HYUNDAI_AUX_SOH", "path": "Battery",        "fmt": {"bix": 328, "len": 8, "max": 100, "unit": "percent" }, "name": "Aux battery state of health"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "E00A"}, "freq": 1,
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "E00A"}, "freq": 1, "dbgfilter": { "to": 2018, "years": [2023] },
   "signals": [
     {"id": "HYUNDAI_KNOCK_RETARD_1", "path": "Engine", "fmt": {"bix": 96,  "len": 8, "max": 25, "min": -25, "div": 5, "sign": true, "unit": "degrees" }, "name": "Knock retard cyl 1"},
     {"id": "HYUNDAI_KNOCK_RETARD_2", "path": "Engine", "fmt": {"bix": 104, "len": 8, "max": 25, "min": -25, "div": 5, "sign": true, "unit": "degrees" }, "name": "Knock retard cyl 2"},
@@ -207,7 +206,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "ED02"}, "freq": 1,
   "signals": [
-    {"id": "HYUNDAI_EOT", "path": "Engine", "fmt": {"bix": 184, "len": 8, "max": 215, "min": -40, "add": -4, "unit": "celsius" }, "name": "Engine oil temperature"}
+    {"id": "HYUNDAI_EOT_V2", "path": "Engine", "fmt": {"bix": 184, "len": 8, "max": 215, "min": -40, "add": -4, "unit": "celsius" }, "name": "Engine oil temperature"}
   ]},
 { "hdr": "7E1", "dbg": true, "cmd": {"22": "01A4"}, "freq": 1,
   "signals": [

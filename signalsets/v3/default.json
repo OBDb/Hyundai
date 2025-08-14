@@ -20,8 +20,8 @@
     {"id": "HYUNDAI_HANDBRAKE",      "path": "Control",   "fmt": {"bix": 36, "len": 1, "max": 1, "unit": "noyes" }, "name": "Handbrake engaged?"},
     {"id": "HYUNDAI_DOOR_RR",        "path": "Doors",     "fmt": {"bix": 37, "len": 1, "max": 1, "unit": "noyes" }, "name": "Rear right door open?"},
     {"id": "HYUNDAI_DOOR_RL",        "path": "Doors",     "fmt": {"bix": 39, "len": 1, "max": 1, "unit": "noyes" }, "name": "Rear left door open?"},
-    {"id": "HYUNDAI_BELT_PASSENGER", "path": "Seatbelts", "fmt": {"bix": 40, "len": 1, "max": 1, "unit": "noyes" }, "name": "Passenger seatbelt latched?"},
-    {"id": "HYUNDAI_BELT_DRIVER",    "path": "Seatbelts", "fmt": {"bix": 41, "len": 1, "max": 1, "unit": "noyes" }, "name": "Driver seatbelt latched?"},
+    {"id": "HYUNDAI_BELT_PASSENGER", "path": "Seatbelts", "fmt": {"bix": 40, "len": 1, "max": 1, "unit": "noyes" }, "name": "Seatbelt passenger"},
+    {"id": "HYUNDAI_BELT_DRIVER",    "path": "Seatbelts", "fmt": {"bix": 41, "len": 1, "max": 1, "unit": "noyes" }, "name": "Seatbelt driver"},
     {"id": "HYUNDAI_BELT_PASS",      "path": "Seatbelts", "fmt": {"bix": 45, "len": 1, "max": 1, "unit": "noyes" }, "name": "Passenger seatbelt latched?"},
     {"id": "HYUNDAI_BELT_DRIV",      "path": "Seatbelts", "fmt": {"bix": 46, "len": 1, "max": 1, "unit": "noyes" }, "name": "Driver seatbelt latched?"},
     {"id": "HYUNDAI_HOOD",           "path": "Doors",     "fmt": {"bix": 47, "len": 1, "max": 1, "unit": "noyes" }, "name": "Hood latched?"},
@@ -31,7 +31,7 @@
   "signals": [
     {"id": "HYUNDAI_GEAR_R",       "path": "Transmission", "fmt": {"bix": 35, "len": 1, "max": 1, "unit": "noyes"  }, "name": "Reverse gear selected"},
     {"id": "HYUNDAI_LOCK_FL",      "path": "Doors",        "fmt": {"bix": 36, "len": 1, "max": 1, "unit": "scalar" }, "name": "Front left door locked?"},
-    {"id": "HYUNDAI_REVERSE_GEAR", "path": "Transmission", "fmt": {"bix": 36, "len": 1, "max": 1, "unit": "noyes"  }, "name": "Reverse Gear Selected"},
+    {"id": "HYUNDAI_REVERSE_GEAR", "path": "Transmission", "fmt": {"bix": 36, "len": 1, "max": 1, "unit": "noyes"  }, "name": "Reverse gear selected"},
     {"id": "HYUNDAI_LOCK_FR",      "path": "Doors",        "fmt": {"bix": 37, "len": 1, "max": 1, "unit": "scalar" }, "name": "Front right door locked?"},
     {"id": "HYUNDAI_BELT_RM",      "path": "Seatbelts",    "fmt": {"bix": 52, "len": 1, "max": 1, "unit": "noyes"  }, "name": "Rear middle seatbelt latched?"},
     {"id": "HYUNDAI_BELT_RL",      "path": "Seatbelts",    "fmt": {"bix": 53, "len": 1, "max": 1, "unit": "noyes"  }, "name": "Rear left seatbelt latched?"},
@@ -130,13 +130,6 @@
     {"id": "HYUNDAI_ODO",             "path": "Trips",      "fmt": {"bix": 48, "len": 24, "max": 4294967295,              "unit": "kilometers" }, "name": "Odometer",            "suggestedMetric": "odometer"},
     {"id": "HYUNDAI_ODO_MI",          "path": "Trips",      "fmt": {"bix": 72, "len": 24, "max": 16777215,                "unit": "miles"      }, "name": "Odometer (imperial)", "suggestedMetric": "odometer"}
   ]},
-{ "hdr": "7D1", "dbg": true, "cmd": {"22": "4000"}, "freq": 1,
-  "signals": [
-    {"id": "HYUNDAI_TIRE_FL_VSS_V2", "path": "Movement", "fmt": {"bix": 48, "len": 8, "max": 205, "min": -50, "add": -50, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
-    {"id": "HYUNDAI_TIRE_FR_VSS_V2", "path": "Movement", "fmt": {"bix": 56, "len": 8, "max": 205, "min": -50, "add": -50, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
-    {"id": "HYUNDAI_TIRE_RL_VSS_V2", "path": "Movement", "fmt": {"bix": 64, "len": 8, "max": 205, "min": -50, "add": -50, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
-    {"id": "HYUNDAI_TIRE_RR_VSS_V2", "path": "Movement", "fmt": {"bix": 72, "len": 8, "max": 205, "min": -50, "add": -50, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
-  ]},
 { "hdr": "7D1", "rax": "7D9", "dbg": true, "cmd": {"21": "01"}, "freq": 0.25,
   "signals": [
     {"id": "HYUNDAI_VSS_AVG_V2",     "path": "Movement", "fmt": {"bix": 48,  "len": 8,  "max": 255,                                               "unit": "kilometersPerHour" }, "name": "Vehicle speed"},
@@ -162,6 +155,17 @@
     {"id": "HYUNDAI_TC_SWITCH",   "path": "Movement", "fmt": {"bix": 150, "len": 1,  "max": 1,                                                 "unit": "noyes"             }, "name": "ABS traction control switch (raw)"},
     {"id": "HYUNDAI_STEER_ANGLE", "path": "Control",  "fmt": {"bix": 200, "len": 16, "max": 3276.7, "min": -3276.8, "div": 10,   "sign": true, "unit": "degrees"           }, "name": "Steering wheel angle"},
     {"id": "HYUNDAI_BRAKE_P",     "path": "Control",  "fmt": {"bix": 256, "len": 16, "max": 100,                    "div": 86.7, "sign": true, "unit": "percent"           }, "name": "Brake pressure"}
+  ]},
+{ "hdr": "7D1", "rax": "7D9", "dbg": true, "cmd": {"22": "4000"}, "freq": 0.1,
+  "signals": [
+    {"id": "HYUNDAI_TIRE_FL_VSS_V2", "path": "Movement", "fmt": {"bix": 48, "len": 8, "max": 255,                         "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "HYUNDAI_TIRE_FL_VSS_V2", "path": "Movement", "fmt": {"bix": 48, "len": 8, "max": 205, "min": -50, "add": -50, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "HYUNDAI_TIRE_FR_VSS_V2", "path": "Movement", "fmt": {"bix": 56, "len": 8, "max": 255,                         "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "HYUNDAI_TIRE_FR_VSS_V2", "path": "Movement", "fmt": {"bix": 56, "len": 8, "max": 205, "min": -50, "add": -50, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "HYUNDAI_TIRE_RL_VSS_V2", "path": "Movement", "fmt": {"bix": 64, "len": 8, "max": 255,                         "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "HYUNDAI_TIRE_RL_VSS_V2", "path": "Movement", "fmt": {"bix": 64, "len": 8, "max": 205, "min": -50, "add": -50, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "HYUNDAI_TIRE_RR_VSS_V2", "path": "Movement", "fmt": {"bix": 72, "len": 8, "max": 255,                         "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
+    {"id": "HYUNDAI_TIRE_RR_VSS_V2", "path": "Movement", "fmt": {"bix": 72, "len": 8, "max": 205, "min": -50, "add": -50, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
   ]},
 { "hdr": "7D4", "rax": "7DC", "dbg": true, "cmd": {"21": "01"}, "freq": 0.25,
   "signals": [
@@ -236,13 +240,6 @@
   "signals": [
     {"id": "HYUNDAI_EOT_V2", "path": "Engine", "fmt": {"bix": 184, "len": 8, "max": 215, "min": -40, "add": -4, "unit": "celsius" }, "name": "Engine oil temperature"}
   ]},
-{ "hdr": "7E1", "dbg": true, "cmd": {"22": "01A4"}, "freq": 1,
-  "signals": [
-    {"id": "HYUNDAI_GEAR_CUR",   "path": "Transmission", "fmt": {"bix": 188, "len": 4,  "max": 15,                                    "unit": "scalar"  }, "name": "Current gear"},
-    {"id": "HYUNDAI_GEAR_NXT",   "path": "Transmission", "fmt": {"bix": 196, "len": 4,  "max": 15,                                    "unit": "scalar"  }, "name": "Next gear"},
-    {"id": "HYUNDAI_CLUTCH_1_T", "path": "Transmission", "fmt": {"bix": 232, "len": 16, "max": 300, "min": -40, "mul": 2, "add": -40, "unit": "celsius" }, "name": "Clutch #1 temperature", "description": "Part of the dual clutch transition"},
-    {"id": "HYUNDAI_CLUTCH_2_T", "path": "Transmission", "fmt": {"bix": 248, "len": 16, "max": 300, "min": -40, "mul": 2, "add": -40, "unit": "celsius" }, "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition"}
-  ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"21": "A0"}, "freq": 1,
   "signals": [
     {"id": "HYUNDAI_VSS_V3", "path": "Movement",     "fmt": {"bix": 48,  "len": 8, "max": 255,                         "unit": "kilometersPerHour" }, "name": "Vehicle speed",                            "suggestedMetric": "speed"},
@@ -254,6 +251,13 @@
           "4": { "description": "Manual",  "value": "MANUAL" }
         }}
     }
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "01A4"}, "freq": 1,
+  "signals": [
+    {"id": "HYUNDAI_GEAR_CUR",   "path": "Transmission", "fmt": {"bix": 188, "len": 4,  "max": 15,                                    "unit": "scalar"  }, "name": "Current gear"},
+    {"id": "HYUNDAI_GEAR_NXT",   "path": "Transmission", "fmt": {"bix": 196, "len": 4,  "max": 15,                                    "unit": "scalar"  }, "name": "Next gear"},
+    {"id": "HYUNDAI_CLUTCH_1_T", "path": "Transmission", "fmt": {"bix": 232, "len": 16, "max": 300, "min": -40, "mul": 2, "add": -40, "unit": "celsius" }, "name": "Clutch #1 temperature", "description": "Part of the dual clutch transition"},
+    {"id": "HYUNDAI_CLUTCH_2_T", "path": "Transmission", "fmt": {"bix": 248, "len": 16, "max": 300, "min": -40, "mul": 2, "add": -40, "unit": "celsius" }, "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition"}
   ]},
 { "hdr": "7E2", "rax": "7EA", "dbg": true, "cmd": {"21": "01"}, "freq": 0.25,
   "signals": [

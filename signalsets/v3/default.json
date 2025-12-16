@@ -205,12 +205,13 @@
   ]},
 { "hdr": "7C6", "rax": "7CE", "dbg": true, "cmd": {"22": "B002"}, "freq": 1,
   "signals": [
-    {"id": "HYUNDAI_FLI_VOL",         "path": "Fuel",       "fmt": {"bix": 32, "len": 8,  "max": 255,                     "unit": "liters"     }, "name": "Fuel level (volume)"},
-    {"id": "HYUNDAI_CLUSTER_VOLTAGE", "path": "Electrical", "fmt": {"bix": 40, "len": 8,  "max": 18,         "div": 12.8, "unit": "volts"      }, "name": "Cluster voltage"},
-    {"id": "HYUNDAI_VPWR",            "path": "Battery",    "fmt": {"bix": 40, "len": 8,  "max": 18,         "div": 12.8, "unit": "volts"      }, "name": "12v battery voltage", "suggestedMetric": "starterBatteryVoltage"},
-    {"id": "HYUNDAI_ODO_KM",          "path": "Trips",      "fmt": {"bix": 48, "len": 24, "max": 16777215,                "unit": "kilometers" }, "name": "Odometer (metric)",   "suggestedMetric": "odometer"},
-    {"id": "HYUNDAI_ODO",             "path": "Trips",      "fmt": {"bix": 48, "len": 24, "max": 4294967295,              "unit": "kilometers" }, "name": "Odometer",            "suggestedMetric": "odometer"},
-    {"id": "HYUNDAI_ODO_MI",          "path": "Trips",      "fmt": {"bix": 72, "len": 24, "max": 16777215,                "unit": "miles"      }, "name": "Odometer (imperial)", "suggestedMetric": "odometer"}
+    {"id": "HYUNDAI_FLI_VOL",                  "path": "Fuel",       "fmt": {"bix": 32, "len": 8,  "max": 255,                     "unit": "liters"     }, "name": "Fuel level (volume)"},
+    {"id": "HYUNDAI_FLI_VOL_THIRDGEN",         "path": "Fuel",       "fmt": {"bix": 32, "len": 8,  "max": 127.5,      "div": 2,    "unit": "liters"     }, "name": "Fuel level",          "suggestedMetric": "fuelTankLevel"},
+    {"id": "HYUNDAI_CLUSTER_VOLTAGE",          "path": "Electrical", "fmt": {"bix": 40, "len": 8,  "max": 18,         "div": 12.8, "unit": "volts"      }, "name": "Cluster voltage"},
+    {"id": "HYUNDAI_CLUSTER_VOLTAGE_THIRDGEN", "path": "Electrical", "fmt": {"bix": 40, "len": 8,  "max": 18,         "div": 12.8, "unit": "volts"      }, "name": "Cluster voltage",     "suggestedMetric": "starterBatteryVoltage"},
+    {"id": "HYUNDAI_ODO_KM",                   "path": "Trips",      "fmt": {"bix": 48, "len": 24, "max": 16777215,                "unit": "kilometers" }, "name": "Odometer (metric)",   "suggestedMetric": "odometer"},
+    {"id": "HYUNDAI_ODO",                      "path": "Trips",      "fmt": {"bix": 48, "len": 24, "max": 4294967295,              "unit": "kilometers" }, "name": "Odometer",            "suggestedMetric": "odometer"},
+    {"id": "HYUNDAI_ODO_MI",                   "path": "Trips",      "fmt": {"bix": 72, "len": 24, "max": 16777215,                "unit": "miles"      }, "name": "Odometer (imperial)", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7D1", "rax": "7D9", "dbg": true, "cmd": {"21": "01"}, "freq": 1,
   "signals": [
@@ -266,14 +267,30 @@
   ]},
 { "hdr": "7D6", "rax": "7DE", "dbg": true, "cmd": {"21": "06"}, "freq": 1,
   "signals": [
-    {"id": "HYUNDAI_TP_1", "path": "Tires", "fmt": {            "len": 16, "max": 6553.5,                "div": 10,               "unit": "kilopascal" }, "name": "Sensor 1 pressure"},
-    {"id": "HYUNDAI_TT_1", "path": "Tires", "fmt": {"bix": 16,  "len": 16, "max": 32767,  "min": -32768,            "sign": true, "unit": "celsius"    }, "name": "Sensor 1 temperature"},
-    {"id": "HYUNDAI_TP_2", "path": "Tires", "fmt": {"bix": 48,  "len": 16, "max": 6553.5,                "div": 10,               "unit": "kilopascal" }, "name": "Sensor 2 pressure"},
-    {"id": "HYUNDAI_TT_2", "path": "Tires", "fmt": {"bix": 64,  "len": 16, "max": 32767,  "min": -32768,            "sign": true, "unit": "celsius"    }, "name": "Sensor 2 temperature"},
-    {"id": "HYUNDAI_TP_3", "path": "Tires", "fmt": {"bix": 96,  "len": 16, "max": 6553.5,                "div": 10,               "unit": "kilopascal" }, "name": "Sensor 3 pressure"},
-    {"id": "HYUNDAI_TT_3", "path": "Tires", "fmt": {"bix": 112, "len": 16, "max": 32767,  "min": -32768,            "sign": true, "unit": "celsius"    }, "name": "Sensor 3 temperature"},
-    {"id": "HYUNDAI_TP_4", "path": "Tires", "fmt": {"bix": 144, "len": 16, "max": 6553.5,                "div": 10,               "unit": "kilopascal" }, "name": "Sensor 4 pressure"},
-    {"id": "HYUNDAI_TT_4", "path": "Tires", "fmt": {"bix": 160, "len": 16, "max": 32767,  "min": -32768,            "sign": true, "unit": "celsius"    }, "name": "Sensor 4 temperature"}
+    {"id": "HYUNDAI_TP_1",  "path": "Tires",  "fmt": {            "len": 16, "max": 6553.5,                                      "div": 10,                           "unit": "kilopascal" }, "name": "Sensor 1 pressure"},
+    {"id": "HYUNDAI_FL_TP", "path": "Tires",  "fmt": {            "len": 8,  "max": 3.5163276,                "mul": 0.01378952,                                      "unit": "bars"       }, "name": "Front left tire pressure",     "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "HYUNDAI_FL_TT", "path": "Engine", "fmt": {"bix": 8,   "len": 8,  "max": 205,       "min": -50,                                  "add": -50,               "unit": "celsius"    }, "name": "Front left tire temperature",  "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "HYUNDAI_TT_1",  "path": "Tires",  "fmt": {"bix": 16,  "len": 16, "max": 32767,     "min": -32768,                                           "sign": true, "unit": "celsius"    }, "name": "Sensor 1 temperature"},
+    {"id": "HYUNDAI_FR_TP", "path": "Tires",  "fmt": {"bix": 32,  "len": 8,  "max": 3.5163276,                "mul": 0.01378952,                                      "unit": "bars"       }, "name": "Front right tire pressure",    "suggestedMetric": "frontRightTirePressure"},
+    {"id": "HYUNDAI_FR_TT", "path": "Engine", "fmt": {"bix": 40,  "len": 8,  "max": 205,       "min": -50,                                  "add": -50,               "unit": "celsius"    }, "name": "Front right tire temperature", "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "HYUNDAI_TP_2",  "path": "Tires",  "fmt": {"bix": 48,  "len": 16, "max": 6553.5,                                      "div": 10,                           "unit": "kilopascal" }, "name": "Sensor 2 pressure"},
+    {"id": "HYUNDAI_TT_2",  "path": "Tires",  "fmt": {"bix": 64,  "len": 16, "max": 32767,     "min": -32768,                                           "sign": true, "unit": "celsius"    }, "name": "Sensor 2 temperature"},
+    {"id": "HYUNDAI_RL_TP", "path": "Tires",  "fmt": {"bix": 64,  "len": 8,  "max": 3.5163276,                "mul": 0.01378952,                                      "unit": "bars"       }, "name": "Rear left tire pressure",      "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "HYUNDAI_RL_TT", "path": "Engine", "fmt": {"bix": 72,  "len": 8,  "max": 205,       "min": -50,                                  "add": -50,               "unit": "celsius"    }, "name": "Rear left tire temperature",   "suggestedMetric": "rearLeftTireTemperature"},
+    {"id": "HYUNDAI_TP_3",  "path": "Tires",  "fmt": {"bix": 96,  "len": 16, "max": 6553.5,                                      "div": 10,                           "unit": "kilopascal" }, "name": "Sensor 3 pressure"},
+    {"id": "HYUNDAI_RR_TP", "path": "Tires",  "fmt": {"bix": 96,  "len": 8,  "max": 3.5163276,                "mul": 0.01378952,                                      "unit": "bars"       }, "name": "Rear right tire pressure",     "suggestedMetric": "rearRightTirePressure"},
+    {"id": "HYUNDAI_RR_TT", "path": "Engine", "fmt": {"bix": 104, "len": 8,  "max": 205,       "min": -50,                                  "add": -50,               "unit": "celsius"    }, "name": "Rear right tire temperature",  "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "HYUNDAI_TT_3",  "path": "Tires",  "fmt": {"bix": 112, "len": 16, "max": 32767,     "min": -32768,                                           "sign": true, "unit": "celsius"    }, "name": "Sensor 3 temperature"},
+    {"id": "HYUNDAI_TP_4",  "path": "Tires",  "fmt": {"bix": 144, "len": 16, "max": 6553.5,                                      "div": 10,                           "unit": "kilopascal" }, "name": "Sensor 4 pressure"},
+    {"id": "HYUNDAI_TT_4",  "path": "Tires",  "fmt": {"bix": 160, "len": 16, "max": 32767,     "min": -32768,                                           "sign": true, "unit": "celsius"    }, "name": "Sensor 4 temperature"}
+  ]},
+{ "hdr": "7E0", "dbg": true, "cmd": {"21": "03"}, "freq": 1,
+  "signals": [
+    {"id": "HYUNDAI_REQUESTED_TORQUE_V2",           "path": "ECU",    "fmt": {"bix": 40,  "len": 16, "max": 100.00641,                     "mul": 0.001526,                            "unit": "percent"    }, "name": "Requested torque"},
+    {"id": "HYUNDAI_EXHAUST_GAS_T",                 "path": "Engine", "fmt": {"bix": 368, "len": 8,  "max": 1300.00000011,      "min": 99, "mul": 4.709803922,              "add": 99, "unit": "celsius"    }, "name": "Exhaust gas temperature"},
+    {"id": "HYUNDAI_ODOMETER_AT_LAST_DPF_REGEN",    "path": "Trips",  "fmt": {"bix": 392, "len": 32, "max": 4294967.2949999999,                                "div": 1000,            "unit": "kilometers" }, "name": "Odometer at last DPF regeneration"},
+    {"id": "HYUNDAI_DISTANCE_SINCE_LAST_DPF_REGEN", "path": "Trips",  "fmt": {"bix": 424, "len": 32, "max": 4294967.2949999999,                                "div": 1000,            "unit": "kilometers" }, "name": "Distance since last DPF regeneration"},
+    {"id": "HYUNDAI_ODO_V2",                        "path": "Trips",  "fmt": {"bix": 456, "len": 32, "max": 4294967.2949999999,                                "div": 1000,            "unit": "kilometers" }, "name": "Odometer",                             "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"21": "22"}, "freq": 1,
   "signals": [
@@ -335,10 +352,6 @@
     {"id": "HYUNDAI_FUEL_INJECTION_TIMING_3",     "path": "Fuel",     "fmt": {"bix": 208, "len": 16, "blsb": true,     "max": 53686.272,                  "mul": 0.8192,                                          "unit": "milliseconds" },                                     "name": "Fuel injection timing #3"},
     {"id": "HYUNDAI_FUEL_INJECTION_TIMING_4",     "path": "Fuel",     "fmt": {"bix": 224, "len": 16, "blsb": true,     "max": 53686.272,                  "mul": 0.8192,                                          "unit": "milliseconds" },                                     "name": "Fuel injection timing #4"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "03"}, "freq": 1,
-  "signals": [
-    {"id": "HYUNDAI_REQUESTED_TORQUE_V2", "path": "ECU", "fmt": {"bix": 40, "len": 16, "max": 100.00641, "mul": 0.001526, "unit": "percent" }, "name": "Requested torque"}
-  ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "04"}, "freq": 1,
   "signals": [
     {"id": "HYUNDAI_FUEL_CUT_V2",                  "path": "Engine",   "fmt": {"bix": 64,  "len": 8, "max": 255, "unit": "scalar" }, "name": "fuel cut"},
@@ -346,6 +359,16 @@
     {"id": "HYUNDAI_COOLANT_FAN_HIGH_SPEED__1_8_", "path": "Movement", "fmt": {"bix": 109, "len": 1, "max": 1,   "unit": "offon"  }, "name": "Coolant fan high speed (1.8)"},
     {"id": "HYUNDAI_COOLANT_FAN_LOW_SPEED__1_8_",  "path": "Movement", "fmt": {"bix": 110, "len": 1, "max": 1,   "unit": "offon"  }, "name": "Coolant fan low speed (1.8)"},
     {"id": "HYUNDAI_KNOCK_DETECTED_V2",            "path": "Engine",   "fmt": {"bix": 168, "len": 8, "max": 255, "unit": "scalar" }, "name": "knock detected"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "06"}, "freq": 1,
+  "signals": [
+    {"id": "HYUNDAI_DPF_REGENERATION_STATE", "path": "Engine", "fmt": {"bix": 207, "len": 1, "max": 1, "unit": "offon" }, "name": "Diesel particulate filter regeneration state"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "07"}, "freq": 1,
+  "signals": [
+    {"id": "HYUNDAI_MAIN_INJECTION_QTY",  "path": "Engine", "fmt": {"bix": 96,  "len": 8,  "max": 100.000000065, "mul": 0.392156863, "unit": "liters" }, "name": "Main injection volume"},
+    {"id": "HYUNDAI_PILOT_INJECTION_QTY", "path": "Engine", "fmt": {"bix": 104, "len": 16, "max": 65535,                             "unit": "liters" }, "name": "Pilot injection volume"},
+    {"id": "HYUNDAI_POST_INJECTION_QTY",  "path": "Engine", "fmt": {"bix": 128, "len": 16, "max": 65535,                             "unit": "liters" }, "name": "Post injection volume"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "0D"}, "freq": 1,
   "signals": [
@@ -406,6 +429,10 @@
     {"id": "HYUNDAI_KNOCK_RETARD_2_V2",            "path": "Engine", "fmt": {"bix": 176, "len": 8,  "max": 0,     "min": -191.25,    "mul": 0.75,                      "add": -191.25,               "unit": "degrees" },                "name": "Knock retard cylinder # 2"},
     {"id": "HYUNDAI_KNOCK_RETARD_3_V2",            "path": "Engine", "fmt": {"bix": 184, "len": 8,  "max": 0,     "min": -191.25,    "mul": 0.75,                      "add": -191.25,               "unit": "degrees" },                "name": "Knock retard cylinder # 3"},
     {"id": "HYUNDAI_KNOCK_RETARD_4_V2",            "path": "Engine", "fmt": {"bix": 192, "len": 8,  "max": 0,     "min": -191.25,    "mul": 0.75,                      "add": -191.25,               "unit": "degrees" },                "name": "Knock retard cylinder # 4"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "1B"}, "freq": 1,
+  "signals": [
+    {"id": "HYUNDAI_DPF_DIFFERENTIAL_PRESSURE", "path": "Engine", "fmt": { "len": 16, "max": 32767.5, "div": 2, "unit": "unknown" }, "name": "Diesel particulate filter differential pressure"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "1D"}, "freq": 1,
   "signals": [
@@ -468,10 +495,18 @@
   "signals": [
     {"id": "HYUNDAI_EOT_V2", "path": "Engine", "fmt": {"bix": 184, "len": 8, "max": 215, "min": -40, "add": -4, "unit": "celsius" }, "name": "Engine oil temperature"}
   ]},
-{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"21": "A0"}, "freq": 1,
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"21": "A0"}, "freq": 0.25,
   "signals": [
-    {"id": "HYUNDAI_VSS_V3", "path": "Movement",     "fmt": {"bix": 48,  "len": 8, "max": 255,                         "unit": "kilometersPerHour" }, "name": "Vehicle speed",                            "suggestedMetric": "speed"},
-    {"id": "HYUNDAI_ATF_T",  "path": "Transmission", "fmt": {"bix": 104, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius"           }, "name": "Automatic transmission fluid temperature"},
+    {"id": "HYUNDAI_ENGINE_RPM_TCM",        "path": "Engine",       "fmt": {"bix": 32,  "len": 16, "max": 16383.75,                          "div": 4,                "unit": "rpm"               }, "name": "Engine RPM"},
+    {"id": "HYUNDAI_VEHICLE_SPEED",         "path": "Movement",     "fmt": {"bix": 48,  "len": 8,  "max": 255,                                                        "unit": "kilometersPerHour" }, "name": "Vehicle speed",                            "suggestedMetric": "speed"},
+    {"id": "HYUNDAI_APP_REL_TCM",           "path": "Control",      "fmt": {"bix": 64,  "len": 8,  "max": 100,                   "mul": 100, "div": 255,              "unit": "percent"           }, "name": "Relative accelerator pedal position"},
+    {"id": "HYUNDAI_TURBINE_SPEED",         "path": "Engine",       "fmt": {"bix": 72,  "len": 16, "max": 16383.75,                          "div": 4,                "unit": "rpm"               }, "name": "Turbine speed"},
+    {"id": "HYUNDAI_OUTPUT_SPEED",          "path": "Engine",       "fmt": {"bix": 88,  "len": 16, "max": 16383.75,                          "div": 4,                "unit": "rpm"               }, "name": "Output speed"},
+    {"id": "HYUNDAI_ATF_T",                 "path": "Engine",       "fmt": {"bix": 104, "len": 8,  "max": 215,      "min": -40,                          "add": -40,  "unit": "celsius"           }, "name": "Automatic transmission fluid temperature", "suggestedMetric": "transmissionFluidTemperature"},
+    {"id": "HYUNDAI_TORQUE_CONVERTER_SLIP", "path": "Engine",       "fmt": {"bix": 128, "len": 16, "max": 15871.75, "min": -512,             "div": 4,   "add": -512, "unit": "rpm"               }, "name": "Torque converter slip"},
+    {"id": "HYUNDAI_CURRENT_GEAR",          "path": "Transmission", "fmt": {"bix": 168, "len": 8,  "max": 255,                                                        "unit": "scalar"            }, "name": "Current gear"},
+    {"id": "HYUNDAI_COMMANDED_GEAR",        "path": "Transmission", "fmt": {"bix": 176, "len": 8,  "max": 255,                                                        "unit": "scalar"            }, "name": "Commanded gear"},
+    {"id": "HYUNDAI_BRAKE_PEDAL",           "path": "Control",      "fmt": {"bix": 192, "len": 8,  "max": 255,                                                        "unit": "scalar"            }, "name": "Brake pedal"},
     {"id": "HYUNDAI_GEAR", "path": "Transmission", "name": "Current gear", "description": "The automatic transmission gear.", "fmt": {"bix": 152, "len": 8, "map": {
           "1": { "description": "Neutral", "value": "NEUTRAL" },
           "2": { "description": "Reverse", "value": "REVERSE" },
@@ -482,17 +517,17 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "01A0"}, "freq": 1,
   "signals": [
-    {"id": "HYUNDAI_RPM_V2",                "path": "Movement",     "fmt": {"bix": 32,  "len": 16, "max": 16383.75,              "mul": 0.25,                          "unit": "rpm"               }, "name": "[TCM] engine RPM"},
-    {"id": "HYUNDAI_VSS_7E1",               "path": "Movement",     "fmt": {"bix": 48,  "len": 8,  "max": 255,                                                         "unit": "kilometersPerHour" }, "name": "[TCM] vehicle speed",                       "suggestedMetric": "speed"},
-    {"id": "HYUNDAI_REL_APP",               "path": "Movement",     "fmt": {"bix": 64,  "len": 8,  "max": 100,                   "mul": 100,  "div": 255,              "unit": "percent"           }, "name": "[TCM] relative accelerator pedal position"},
-    {"id": "HYUNDAI_TURBINE_SPEED",         "path": "Movement",     "fmt": {"bix": 72,  "len": 16, "max": 16383.75,              "mul": 0.25,                          "unit": "rpm"               }, "name": "[TCM] turbine speed"},
-    {"id": "HYUNDAI_OUTPUT_SPEED",          "path": "Movement",     "fmt": {"bix": 88,  "len": 16, "max": 16383.75,              "mul": 0.25,                          "unit": "rpm"               }, "name": "[TCM] output speed"},
-    {"id": "HYUNDAI_ATF_T_V2",              "path": "Engine",       "fmt": {"bix": 104, "len": 8,  "max": 215,      "min": -40,                           "add": -40,  "unit": "celsius"           }, "name": "[TCM] ATF temperature"},
-    {"id": "HYUNDAI_TORQUE_CONVERTER_SLIP", "path": "Engine",       "fmt": {"bix": 128, "len": 16, "max": 15871.75, "min": -512, "mul": 0.25,             "add": -512, "unit": "rpm"               }, "name": "[TCM] torque converter slip"},
-    {"id": "HYUNDAI_GEAR_V2",               "path": "Transmission", "fmt": {"bix": 160, "len": 8,  "max": 255,                                                         "unit": "scalar"            }, "name": "[TCM] selector d"},
-    {"id": "HYUNDAI_CURRENT_GEAR",          "path": "Transmission", "fmt": {"bix": 168, "len": 8,  "max": 255,                                                         "unit": "scalar"            }, "name": "[TCM] current gear"},
-    {"id": "HYUNDAI_COMMANDED_GEAR",        "path": "Transmission", "fmt": {"bix": 176, "len": 8,  "max": 255,                                                         "unit": "scalar"            }, "name": "[TCM] commanded gear"},
-    {"id": "HYUNDAI_BRAKE_PEDAL",           "path": "Control",      "fmt": {"bix": 192, "len": 8,  "max": 255,                                                         "unit": "scalar"            }, "name": "[TCM] brake pedal"}
+    {"id": "HYUNDAI_RPM_V3",                   "path": "Movement",     "fmt": {"bix": 32,  "len": 16, "max": 16383.75,              "mul": 0.25,                          "unit": "rpm"               }, "name": "[TCM] engine RPM"},
+    {"id": "HYUNDAI_VSS_7E1",                  "path": "Movement",     "fmt": {"bix": 48,  "len": 8,  "max": 255,                                                         "unit": "kilometersPerHour" }, "name": "[TCM] vehicle speed",                       "suggestedMetric": "speed"},
+    {"id": "HYUNDAI_REL_APP",                  "path": "Movement",     "fmt": {"bix": 64,  "len": 8,  "max": 100,                   "mul": 100,  "div": 255,              "unit": "percent"           }, "name": "[TCM] relative accelerator pedal position"},
+    {"id": "HYUNDAI_TURBINE_SPEED_V2",         "path": "Movement",     "fmt": {"bix": 72,  "len": 16, "max": 16383.75,              "mul": 0.25,                          "unit": "rpm"               }, "name": "[TCM] turbine speed"},
+    {"id": "HYUNDAI_OUTPUT_SPEED_V2",          "path": "Movement",     "fmt": {"bix": 88,  "len": 16, "max": 16383.75,              "mul": 0.25,                          "unit": "rpm"               }, "name": "[TCM] output speed"},
+    {"id": "HYUNDAI_ATF_T_V2",                 "path": "Engine",       "fmt": {"bix": 104, "len": 8,  "max": 215,      "min": -40,                           "add": -40,  "unit": "celsius"           }, "name": "[TCM] ATF temperature"},
+    {"id": "HYUNDAI_TORQUE_CONVERTER_SLIP_V2", "path": "Engine",       "fmt": {"bix": 128, "len": 16, "max": 15871.75, "min": -512, "mul": 0.25,             "add": -512, "unit": "rpm"               }, "name": "[TCM] torque converter slip"},
+    {"id": "HYUNDAI_GEAR_V2",                  "path": "Transmission", "fmt": {"bix": 160, "len": 8,  "max": 255,                                                         "unit": "scalar"            }, "name": "[TCM] selector d"},
+    {"id": "HYUNDAI_CURRENT_GEAR_V2",          "path": "Transmission", "fmt": {"bix": 168, "len": 8,  "max": 255,                                                         "unit": "scalar"            }, "name": "[TCM] current gear"},
+    {"id": "HYUNDAI_COMMANDED_GEAR_V2",        "path": "Transmission", "fmt": {"bix": 176, "len": 8,  "max": 255,                                                         "unit": "scalar"            }, "name": "[TCM] commanded gear"},
+    {"id": "HYUNDAI_BRAKE_PEDAL_V2",           "path": "Control",      "fmt": {"bix": 192, "len": 8,  "max": 255,                                                         "unit": "scalar"            }, "name": "[TCM] brake pedal"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "01A4"}, "freq": 1,
   "signals": [
@@ -518,7 +553,7 @@
     {"id": "HYUNDAI_ACCELERATOR_PEDAL_POSITION", "path": "Control",  "fmt": {"bix": 64,  "len": 16, "blsb": true, "max": 100,                                    "div": 512,                                   "unit": "percent"           },                            "name": "Accelerator pedal position"},
     {"id": "HYUNDAI_VSS_HD",                     "path": "Movement", "fmt": {"bix": 80,  "len": 16, "blsb": true, "max": 511.984375, "min": -512, "mul": 156.25, "div": 10000, "sign": true,                   "unit": "kilometersPerHour" },                            "name": "Vehicle speed, high resolution", "suggestedMetric": "speed"},
     {"id": "HYUNDAI_12V_V",                      "path": "Battery",  "fmt": {"bix": 96,  "len": 16, "blsb": true, "max": 32.0007405,              "mul": 4.883,  "div": 10000,                                 "unit": "volts"             },                            "name": "Auxiliary battery voltage",      "suggestedMetric": "starterBatteryVoltage"},
-    {"id": "HYUNDAI_VPWR_V2",                    "path": "Battery",  "fmt": {"bix": 152, "len": 8,  "max": 100,                                                                              "unit": "percent" },                          "name": "12V battery charge"}
+    {"id": "HYUNDAI_VPWR",                       "path": "Battery",  "fmt": {"bix": 152, "len": 8,  "max": 100,                                                                              "unit": "percent" },                          "name": "12V battery charge"}
   ]},
 { "hdr": "7E2", "rax": "7EA", "dbg": true, "cmd": {"22": "E005"}, "freq": 1,
   "signals": [
@@ -708,7 +743,7 @@
     {"id": "HYUNDAI_BATTERY_FAN_FEEDBACK",         "path": "Battery",  "fmt": {"bix": 224, "len": 8,  "max": 120,                                                            "unit": "hertz"         }, "name": "Battery fan feedback"},
     {"id": "HYUNDAI_HVBAT_FAN",                    "path": "Battery",  "fmt": {"bix": 224, "len": 8,  "max": 255,                                                            "unit": "hertz"         }, "name": "HV battery fan"},
     {"id": "HYUNDAI_AUXILLARY_BATTERY_VOLTAGE",    "path": "Battery",  "fmt": {"bix": 232, "len": 8,  "max": 14.6,       "min": 11,     "div": 10,                           "unit": "volts"         }, "name": "Auxiliary battery voltage"},
-    {"id": "HYUNDAI_VPWR_V3",                      "path": "Battery",  "fmt": {"bix": 232, "len": 8,  "max": 255,                       "div": 10,                           "unit": "volts"         }, "name": "Battery auxiliary voltage",            "suggestedMetric": "starterBatteryVoltage"},
+    {"id": "HYUNDAI_VPWR_V2",                      "path": "Battery",  "fmt": {"bix": 232, "len": 8,  "max": 255,                       "div": 10,                           "unit": "volts"         }, "name": "Battery auxiliary voltage",            "suggestedMetric": "starterBatteryVoltage"},
     {"id": "HYUNDAI_CUMULATIVE_CHARGE_CURRENT",    "path": "Battery",  "fmt": {"bix": 240, "len": 32, "max": 1000000,                                                        "unit": "ampereHours"   }, "name": "Cumulative charge current"},
     {"id": "HYUNDAI_HVBAT_CHRG_TOT_C",             "path": "Battery",  "fmt": {"bix": 240, "len": 32, "max": 429496729,                 "div": 10,                           "unit": "ampereHours"   }, "name": "Total charge (current)"},
     {"id": "HYUNDAI_CUMULATIVE_DISCHARGE_CURRENT", "path": "Battery",  "fmt": {"bix": 272, "len": 32, "max": 1000000,                                                        "unit": "ampereHours"   }, "name": "Cumulative discharge current"},
@@ -964,6 +999,25 @@
 { "hdr": "7E4", "rax": "7EC", "dbg": true, "cmd": {"22": "0114"}, "freq": 1,
   "signals": [
     {"id": "HYUNDAI_AC_COMPRESSOR_OPERATION_RPM", "path": "Climate", "fmt": {"bix": 208, "len": 16, "max": 1310700, "mul": 20, "unit": "rpm" }, "name": "A/C compressor operation RPM"}
+  ]},
+{ "hdr": "7E5", "dbg": true, "cmd": {"21": "C0"}, "freq": 0.25,
+  "signals": [
+    {"id": "HYUNDAI_RPM_V2",                  "path": "Engine",   "fmt": {"bix": 32,  "len": 16, "max": 16383.75,                         "div": 4,               "unit": "rpm"               }, "name": "Engine RPM"},
+    {"id": "HYUNDAI_VSS_AWD",                 "path": "Movement", "fmt": {"bix": 48,  "len": 8,  "max": 255,                                                      "unit": "kilometersPerHour" }, "name": "Vehicle speed",                       "suggestedMetric": "speed"},
+    {"id": "HYUNDAI_APP_REL_AWD",             "path": "Control",  "fmt": {"bix": 56,  "len": 8,  "max": 100,                  "mul": 100, "div": 255,             "unit": "percent"           }, "name": "Relative accelerator pedal position"},
+    {"id": "HYUNDAI_SUPPLY_VOLTAGE",          "path": "Battery",  "fmt": {"bix": 64,  "len": 8,  "max": 25.5,                             "div": 10,              "unit": "volts"             }, "name": "Supply voltage"},
+    {"id": "HYUNDAI_SYSTEM_VOLTAGE",          "path": "Battery",  "fmt": {"bix": 72,  "len": 8,  "max": 25.5,                             "div": 10,              "unit": "volts"             }, "name": "System voltage"},
+    {"id": "HYUNDAI_COMMANDED_TORQUE",        "path": "Engine",   "fmt": {"bix": 80,  "len": 8,  "max": 2550,                 "mul": 10,                          "unit": "newtonMeters"      }, "name": "Commanded torque"},
+    {"id": "HYUNDAI_CLUTCH_SOLENOID_DUTY",    "path": "Engine",   "fmt": {"bix": 88,  "len": 8,  "max": 255,                                                      "unit": "percent"           }, "name": "Clutch solenoid duty"},
+    {"id": "HYUNDAI_HEAT",                    "path": "Engine",   "fmt": {"bix": 96,  "len": 8,  "max": 255,                                                      "unit": "celsius"           }, "name": "Heat"},
+    {"id": "HYUNDAI_FRONT_RIGHT_WHEEL_SPEED", "path": "Movement", "fmt": {"bix": 104, "len": 8,  "max": 255,                                                      "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "HYUNDAI_FRONT_LEFT_WHEEL_SPEED",  "path": "Movement", "fmt": {"bix": 112, "len": 8,  "max": 255,                                                      "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "HYUNDAI_REAR_RIGHT_WHEEL_SPEED",  "path": "Movement", "fmt": {"bix": 120, "len": 8,  "max": 255,                                                      "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
+    {"id": "HYUNDAI_REAR_LEFT_WHEEL_SPEED",   "path": "Movement", "fmt": {"bix": 128, "len": 8,  "max": 255,                                                      "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "HYUNDAI_LOCK_SWITCH",             "path": "Engine",   "fmt": {"bix": 151, "len": 1,  "max": 1,                                                        "unit": "offon"             }, "name": "Lock switch"},
+    {"id": "HYUNDAI_STEERING_WHEEL_ANGLE",    "path": "Tires",    "fmt": {"bix": 160, "len": 8,  "max": 167,      "min": -88,                         "add": -88, "unit": "degrees"           }, "name": "Steering wheel angle"},
+    {"id": "HYUNDAI_MALFUNCTION_INDICATOR",   "path": "Engine",   "fmt": {"bix": 175, "len": 1,  "max": 1,                                                        "unit": "offon"             }, "name": "Malfunction indicator"},
+    {"id": "HYUNDAI_PRESSURE_SENSOR",         "path": "Engine",   "fmt": {"bix": 176, "len": 8,  "max": 63.75,                            "div": 4,               "unit": "bars"              }, "name": "Pressure sensor"}
   ]},
 { "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "E001"}, "freq": 1,
   "signals": [

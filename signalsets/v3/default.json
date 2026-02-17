@@ -543,10 +543,6 @@
     {"id": "HYUNDAI_DISCONNECTOR_INVERTER_PWM_DUTY",      "path": "Engine", "fmt": {"bix": 104, "len": 16, "blsb": true, "max": 100,                  "mul": 78.125, "div": 10000,               "sign": true,                        "unit": "percent"     },                                             "name": "Disconnector inverter PWM duty"},
     {"id": "HYUNDAI_DISCONNECTOR_ZERO_COUNT_OFFSET",      "path": "Engine", "fmt": {"bix": 120, "len": 16, "blsb": true, "max": 32767, "min": -32768,                                            "sign": true,                        "unit": "scalar"      },                                             "name": "Disconnector zero count offset"}
   ]},
-{ "hdr": "7E3", "rax": "7EB", "dbg": true, "cmd": {"21": "02"}, "freq": 0.25,
-  "signals": [
-    {"id": "HYUNDAI_MOTOR_RPM_2102", "path": "Engine", "fmt": {"bix": 32, "len": 16, "blsb": true, "max": 32767, "min": -32768, "sign": true, "unit": "rpm" }, "name": "Motor rpm, alternate"}
-  ]},
 { "hdr": "7E3", "rax": "7EB", "dbg": true, "cmd": {"22": "E001"}, "freq": 1,
   "signals": [
     {"id": "HYUNDAI_IGN_VOLTAGE",             "path": "Engine", "fmt": {"bix": 120, "len": 16, "blsb": true, "max": 65.535,                 "mul": 10, "div": 10000,               "unit": "volts"        }, "name": "Ignition voltage"},
@@ -1049,10 +1045,6 @@
     {"id": "HYUNDAI_2025_AUX_BATTERY_STATE_OF_CHARGE", "path": "Battery", "fmt": {"bix": 160, "len": 8,  "max": 100,                                                       "unit": "percent" }, "name": "Auxiliary battery state of charge"},
     {"id": "HYUNDAI_2025_AUX_BATTERY_VOLTAGE",         "path": "Battery", "fmt": {"bix": 168, "len": 16, "max": 71.535,  "min": 6,               "div": 1000, "add": 6,    "unit": "volts"   }, "name": "Auxiliary battery voltage",                   "suggestedMetric": "starterBatteryVoltage"},
     {"id": "HYUNDAI_2025_AUX_BATTERY_T",               "path": "Battery", "fmt": {"bix": 184, "len": 16, "max": 32727.5, "min": -40,             "div": 2,    "add": -40,  "unit": "celsius" }, "name": "Auxiliary battery temperature"}
-  ]},
-{ "hdr": "7E6", "rax": "7EE", "dbg": true, "cmd": {"21": "80"}, "freq": 0.25,
-  "signals": [
-    {"id": "HYUNDAI_AAT", "path": "Climate", "fmt": {"bix": 96, "len": 8, "max": 23.5, "min": -104, "div": 2, "add": -40, "sign": true, "unit": "celsius" }, "name": "Ambient temperature"}
   ]},
 { "hdr": "7E7", "rax": "7EF", "dbg": true, "cmd": {"22": "C101"}, "freq": 0.25,
   "signals": [

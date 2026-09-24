@@ -127,3 +127,10 @@ jobs:
           git push
           echo "commit_sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
           
+      - name: Upload provenance report as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: provenance-report
+          path: |
+            build/signal_provenance_report.md
+            build/signal_provenance_report.json

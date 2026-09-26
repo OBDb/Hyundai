@@ -226,15 +226,16 @@
   ]},
 { "hdr": "7D1", "rax": "7D9", "dbg": true, "cmd": {"22": "0104"}, "freq": 1,
   "signals": [
-    {"id": "HYUNDAI_VSS_AVG_V2",     "path": "Movement", "fmt": {"bix": 48,  "len": 8,  "max": 255,                                               "unit": "kilometersPerHour" }, "name": "Vehicle speed, average"},
-    {"id": "HYUNDAI_WHEEL_FL_VSS",   "path": "Movement", "fmt": {"bix": 80,  "len": 8,  "max": 255,                                               "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
-    {"id": "HYUNDAI_TIRE_FL_VSS",    "path": "Movement", "fmt": {"bix": 88,  "len": 8,  "max": 255,                                               "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
-    {"id": "HYUNDAI_TIRE_FR_VSS",    "path": "Movement", "fmt": {"bix": 96,  "len": 8,  "max": 255,                                               "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
-    {"id": "HYUNDAI_TIRE_RR_VSS",    "path": "Movement", "fmt": {"bix": 104, "len": 8,  "max": 255,                                               "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
-    {"id": "HYUNDAI_TIRE_RL_VSS",    "path": "Movement", "fmt": {"bix": 112, "len": 8,  "max": 255,                                               "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
-    {"id": "HYUNDAI_TC_SWITCH_V2",   "path": "Movement", "fmt": {"bix": 150, "len": 1,  "max": 1,                                                 "unit": "noyes"             }, "name": "Vehicle traction control switch (raw)"},
-    {"id": "HYUNDAI_STEER_ANGLE_V2", "path": "Control",  "fmt": {"bix": 200, "len": 16, "max": 3276.7, "min": -3276.8, "div": 10,   "sign": true, "unit": "degrees"           }, "name": "Steering wheel angle"},
-    {"id": "HYUNDAI_BRAKE_P_V2",     "path": "Control",  "fmt": {"bix": 256, "len": 16, "max": 100,                    "div": 86.7, "sign": true, "unit": "percent"           }, "name": "Brake pressure"}
+    {"id": "HYUNDAI_VSS_AVG_V2",     "path": "Movement", "fmt": {"bix": 48,  "len": 8,  "max": 255,                                                                  "unit": "kilometersPerHour" }, "name": "Vehicle speed, average"},
+    {"id": "HYUNDAI_WHEEL_FL_VSS",   "path": "Movement", "fmt": {"bix": 80,  "len": 8,  "max": 255,                                                                  "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "HYUNDAI_TIRE_FL_VSS",    "path": "Movement", "fmt": {"bix": 88,  "len": 8,  "max": 255,                                                                  "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "HYUNDAI_TIRE_FR_VSS",    "path": "Movement", "fmt": {"bix": 96,  "len": 8,  "max": 255,                                                                  "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "HYUNDAI_TIRE_RR_VSS",    "path": "Movement", "fmt": {"bix": 104, "len": 8,  "max": 255,                                                                  "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
+    {"id": "HYUNDAI_TIRE_RL_VSS",    "path": "Movement", "fmt": {"bix": 112, "len": 8,  "max": 255,                                                                  "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "HYUNDAI_TC_SWITCH_V2",   "path": "Movement", "fmt": {"bix": 150, "len": 1,  "max": 1,                                                                    "unit": "noyes"             }, "name": "Vehicle traction control switch (raw)"},
+    {"id": "HYUNDAI_STEER_ANGLE_V2", "path": "Control",  "fmt": {"bix": 200, "len": 16, "max": 3276.7, "min": -3276.8, "div": 10,   "sign": true,                    "unit": "degrees"           }, "name": "Steering wheel angle"},
+    {"id": "HYUNDAI_STEER_ANGLE_V2", "path": "Control",  "fmt": {"bix": 200, "len": 16, "max": 3276.7, "min": -3276.8, "div": 10,   "sign": true, "nullmax": 3276.7, "unit": "degrees"           }, "name": "Steering wheel angle"},
+    {"id": "HYUNDAI_BRAKE_P_V2",     "path": "Control",  "fmt": {"bix": 256, "len": 16, "max": 100,                    "div": 86.7, "sign": true,                    "unit": "percent"           }, "name": "Brake pressure"}
   ]},
 { "hdr": "7D1", "rax": "7D9", "dbg": true, "cmd": {"22": "4000"}, "freq": 0.1,
   "signals": [
@@ -256,8 +257,8 @@
   ]},
 { "hdr": "7D4", "rax": "7DC", "dbg": true, "cmd": {"21": "01"}, "freq": 1,
   "signals": [
-    {"id": "HYUNDAI_STEER_ANGLE_V2", "path": "Control", "fmt": {"bix": 24, "len": 16, "max": 3276.7, "min": -3276.8, "mul": 10, "div": 100, "sign": true, "unit": "degrees" }, "name": "Steering angle"},
-    {"id": "HYUNDAI_STEER_ANGLE_V3", "path": "Control", "fmt": {"bix": 72, "len": 16, "max": 3276,   "min": -3276,              "div": 10,  "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"}
+    {"id": "HYUNDAI_STEER_ANGLE_V2_V2", "path": "Control", "fmt": {"bix": 24, "len": 16, "max": 3276.7, "min": -3276.8, "mul": 10, "div": 100, "sign": true, "unit": "degrees" }, "name": "Steering angle"},
+    {"id": "HYUNDAI_STEER_ANGLE_V3",    "path": "Control", "fmt": {"bix": 72, "len": 16, "max": 3276,   "min": -3276,              "div": 10,  "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"}
   ]},
 { "hdr": "7D4", "rax": "7DC", "dbg": true, "cmd": {"22": "0101"}, "freq": 0.25,
   "signals": [
@@ -896,6 +897,14 @@
     {"id": "HYUNDAI_HVBAT_SOC_DISP",    "path": "Battery",             "fmt": {"bix": 248, "len": 8,  "max": 100,                        "div": 2,                                  "unit": "percent"       }, "name": "HV battery charge",                  "suggestedMetric": "stateOfCharge"},
     {"id": "HYUNDAI_HVBAT_CMU097_VOLT", "path": "Battery.Modules.097", "fmt": {"bix": 272, "len": 8,  "max": 4.2, "min": 2.8,            "div": 50,                                 "unit": "volts"         }, "name": "HV battery module 097 voltage"},
     {"id": "HYUNDAI_HVBAT_CMU098_VOLT", "path": "Battery.Modules.098", "fmt": {"bix": 280, "len": 8,  "max": 4.2, "min": 2.8,            "div": 50,                                 "unit": "volts"         }, "name": "HV battery module 098 voltage"}
+  ]},
+{ "hdr": "7E4", "rax": "7EC", "fcm1": true, "dbg": true, "cmd": {"22": "0106"}, "freq": 5,
+  "signals": [
+    {"id": "HYUNDAI_BMS_STATE",         "path": "Battery", "fmt": {            "len": 8, "max": 15,                                         "unit": "scalar"  }, "name": "Battery management state"},
+    {"id": "HYUNDAI_HVBAT_WCS_INLET_T", "path": "Battery", "fmt": {"bix": 32,  "len": 8, "max": 127,  "min": -128,            "sign": true, "unit": "celsius" }, "name": "Battery temperature at WCS input"},
+    {"id": "HYUNDAI_HVBAT_FAN_DUTY",    "path": "Battery", "fmt": {"bix": 64,  "len": 8, "max": 100,                                        "unit": "percent" }, "name": "Battery fan duty feedback"},
+    {"id": "HYUNDAI_AC_COMP_RPM",       "path": "Climate", "fmt": {"bix": 96,  "len": 8, "max": 5100,              "mul": 20,               "unit": "rpm"     }, "name": "Air conditioning compressor speed"},
+    {"id": "HYUNDAI_HVBAT_PRA_T",       "path": "Battery", "fmt": {"bix": 160, "len": 8, "max": 254,  "min": -256, "mul": 2,  "sign": true, "unit": "celsius" }, "name": "Battery temperature at the power relay assembly"}
   ]},
 { "hdr": "7E4", "rax": "7EC", "fcm1": true, "dbg": true, "cmd": {"22": "010A"}, "freq": 1,
   "signals": [

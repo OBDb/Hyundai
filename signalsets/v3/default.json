@@ -1,4 +1,8 @@
-{ "commands": [
+{ "ecu": [
+    { "hdr": "7E0", "type": "engine" },
+    { "hdr": "7E1", "type": "transmission" }
+  ],
+  "commands": [
 { "hdr": "730", "rax": "738", "dbg": true, "cmd": {"22": "F010"}, "freq": 0.25,
   "signals": [
     {"id": "HYUNDAI_WHEEL_FR_VSS_HD",           "path": "Movement",    "fmt": {"bix": 32,  "len": 16, "blsb": true, "max": 2047,                                 "div": 32,                                                   "unit": "kilometersPerHour"      },                  "name": "Front right wheel speed, high resolution"},

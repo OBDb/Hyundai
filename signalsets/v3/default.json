@@ -4,6 +4,7 @@
     { "hdr": "7E1", "type": "transmission" },
     { "hdr": "7E3", "type": "motor" },
     { "hdr": "7E4", "type": "battery" },
+    { "hdr": "7E5", "type": "charger" },
     { "hdr": "7E7", "type": "abs" }
   ],
   "commands": [

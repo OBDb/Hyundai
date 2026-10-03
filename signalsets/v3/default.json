@@ -2,6 +2,7 @@
     { "hdr": "744",               "type": "charger" },
     { "hdr": "7A0",               "type": "bodyControl" },
     { "hdr": "7C6",               "type": "cluster" },
+    { "hdr": "7D4",               "type": "steering" },
     { "hdr": "7E0",               "type": "engine" },
     { "hdr": "7E0", "rax": "7E8", "type": "engine" },
     { "hdr": "7E1",               "type": "transmission" },

@@ -410,9 +410,9 @@
     {"id": "HYUNDAI_CRUZ_WG_V",    "path": "Engine", "fmt": {"bix": 392, "len": 16, "max": 9.99,                     "mul": 0.000152588,                                              "unit": "volts"      }, "name": "Waste gate voltage"},
     {"id": "HYUNDAI_WG_DUTY",      "path": "Engine", "fmt": {"bix": 408, "len": 16, "max": 199.9970916,              "mul": 0.00305176,                                               "unit": "percent"    }, "name": "Waste gate duty"},
     {"id": "HYUNDAI_CRUZ_WG_DUTY", "path": "Engine", "fmt": {"bix": 408, "len": 16, "max": 199,                      "mul": 0.00305176,                                               "unit": "percent"    }, "name": "Waste gate duty"},
-    {"id": "HYUNDAI_WG_POS",       "path": "Engine", "fmt": {"bix": 424, "len": 16, "max": 399.9941832,              "mul": 0.00610352,                                               "unit": "percent"    }, "name": "Waste gate position"},
+    {"id": "HYUNDAI_WG_POS",       "path": "Engine", "fmt": {"bix": 424, "len": 16, "max": 199.99,      "min": -200, "mul": 0.00610352,                "sign": true, "nullmin": -200, "unit": "percent"    }, "name": "Waste gate position"},
     {"id": "HYUNDAI_WG_POSITION",  "path": "Engine", "fmt": {"bix": 424, "len": 16, "max": 199.99,      "min": -200, "mul": 400,         "div": 65535, "sign": true, "nullmin": -200, "unit": "percent"    }, "name": "Waste gate position"},
-    {"id": "HYUNDAI_WG_SP",        "path": "Engine", "fmt": {"bix": 440, "len": 16, "max": 399.9941832,              "mul": 0.00610352,                                               "unit": "percent"    }, "name": "Waste gate setpoint"},
+    {"id": "HYUNDAI_WG_SP",        "path": "Engine", "fmt": {"bix": 440, "len": 16, "max": 199.99,      "min": -200, "mul": 0.00610352,                "sign": true, "nullmin": -200, "unit": "percent"    }, "name": "Waste gate setpoint"},
     {"id": "HYUNDAI_WG_SETPOINT",  "path": "Engine", "fmt": {"bix": 440, "len": 16, "max": 100,         "min": -200, "mul": 400,         "div": 65535, "sign": true, "nullmin": -200, "unit": "percent"    }, "name": "Waste gate set point"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "00"}, "freq": 1,

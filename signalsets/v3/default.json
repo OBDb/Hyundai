@@ -49,25 +49,25 @@
   ]},
 { "hdr": "740", "rax": "748", "dbg": true, "cmd": {"22": "01A1"}, "freq": 0.25,
   "signals": [
-    {"id": "HYUNDAI_AWD_CALC_CMD_TQ",    "path": "Engine", "fmt": {"bix": 40,  "len": 16, "max": 4095.875,  "min": -4096,                    "div": 8,     "sign": true, "unit": "newtonMeters" }, "name": "4WD calculated, commanded torque"},
-    {"id": "HYUNDAI_AWD_PMP_PWM_DUTY",   "path": "Engine", "fmt": {"bix": 56,  "len": 16, "max": 100,       "min": -3276.8,                  "div": 10,    "sign": true, "unit": "percent"      }, "name": "4WD pump PWM duty"},
-    {"id": "HYUNDAI_AWD_CLU_DUTY",       "path": "Engine", "fmt": {"bix": 72,  "len": 16, "max": 100,       "min": -3276.8,                  "div": 10,    "sign": true, "unit": "percent"      }, "name": "4WD clutch duty"},
-    {"id": "HYUNDAI_AWD_MAX_CLU_STRESS", "path": "Engine", "fmt": {"bix": 88,  "len": 16, "max": 100,                       "mul": 19.531,   "div": 10000,               "unit": "percent"      }, "name": "4WD max clutch stress"},
-    {"id": "HYUNDAI_AWD_CLU_STRESS",     "path": "Engine", "fmt": {"bix": 104, "len": 16, "max": 63.99,     "min": -63.99,  "mul": 0.001953,               "sign": true, "unit": "percent"      }, "name": "4WD clutch stress"},
-    {"id": "HYUNDAI_AWD_PMP_CURRENT",    "path": "Engine", "fmt": {"bix": 112, "len": 16, "max": 255,       "min": -256,    "mul": 78.125,   "div": 10000, "sign": true, "unit": "amps"         }, "name": "4WD pump current"},
-    {"id": "HYUNDAI_AWD_CLU_ACT_TQ",     "path": "Engine", "fmt": {"bix": 128, "len": 16, "max": 4095.875,  "min": -4096,                    "div": 8,     "sign": true, "unit": "newtonMeters" }, "name": "4WD clutch, actual torque"},
-    {"id": "HYUNDAI_AWD_CLU_ACT_P",      "path": "Engine", "fmt": {"bix": 144, "len": 16, "max": 63.99,     "min": -63.99,  "mul": 19.53,    "div": 10000, "sign": true, "unit": "bars"         }, "name": "4WD clutch, actual pressure"},
-    {"id": "HYUNDAI_AWD_STEER_WHL_ANG",  "path": "Tires",  "fmt": {"bix": 184, "len": 16, "max": 4095.875,  "min": -4096,                    "div": 8,     "sign": true, "unit": "degrees"      }, "name": "4WD steering wheel angle"},
-    {"id": "HYUNDAI_AWD_CLU_TQ",         "path": "Engine", "fmt": {"bix": 200, "len": 16, "max": 2047.9375, "min": -2048,                    "div": 16,    "sign": true, "unit": "newtonMeters" }, "name": "4WD clutch torque"},
-    {"id": "HYUNDAI_AWD_CLU_P",          "path": "Engine", "fmt": {"bix": 216, "len": 16, "max": 63.99,     "min": -63.99,  "mul": 0.001953,               "sign": true, "unit": "bars"         }, "name": "4WD clutch pressure"}
+    {"id": "HYUNDAI_CRUZ_AWD_CALC_CMD_TQ",    "path": "Engine", "fmt": {"bix": 40,  "len": 16, "max": 4095.875,  "min": -4096,                    "div": 8,     "sign": true, "unit": "newtonMeters" }, "name": "4WD calculated, commanded torque"},
+    {"id": "HYUNDAI_CRUZ_AWD_PMP_PWM_DUTY",   "path": "Engine", "fmt": {"bix": 56,  "len": 16, "max": 100,       "min": -3276.8,                  "div": 10,    "sign": true, "unit": "percent"      }, "name": "4WD pump PWM duty"},
+    {"id": "HYUNDAI_AWD_CLU_DUTY",            "path": "Engine", "fmt": {"bix": 72,  "len": 16, "max": 100,       "min": -3276.8,                  "div": 10,    "sign": true, "unit": "percent"      }, "name": "4WD clutch duty"},
+    {"id": "HYUNDAI_CRUZ_AWD_MAX_CLU_STRESS", "path": "Engine", "fmt": {"bix": 88,  "len": 16, "max": 100,                       "mul": 19.531,   "div": 10000,               "unit": "percent"      }, "name": "4WD max clutch stress"},
+    {"id": "HYUNDAI_AWD_CLU_STRESS",          "path": "Engine", "fmt": {"bix": 104, "len": 16, "max": 63.99,     "min": -63.99,  "mul": 0.001953,               "sign": true, "unit": "percent"      }, "name": "4WD clutch stress"},
+    {"id": "HYUNDAI_CRUZ_AWD_PMP_CURRENT",    "path": "Engine", "fmt": {"bix": 112, "len": 16, "max": 255,       "min": -256,    "mul": 78.125,   "div": 10000, "sign": true, "unit": "amps"         }, "name": "4WD pump current"},
+    {"id": "HYUNDAI_CRUZ_AWD_CLU_ACT_TQ",     "path": "Engine", "fmt": {"bix": 128, "len": 16, "max": 4095.875,  "min": -4096,                    "div": 8,     "sign": true, "unit": "newtonMeters" }, "name": "4WD clutch, actual torque"},
+    {"id": "HYUNDAI_CRUZ_AWD_CLU_ACT_P",      "path": "Engine", "fmt": {"bix": 144, "len": 16, "max": 63.99,     "min": -63.99,  "mul": 19.53,    "div": 10000, "sign": true, "unit": "bars"         }, "name": "4WD clutch, actual pressure"},
+    {"id": "HYUNDAI_AWD_STEER_WHL_ANG",       "path": "Tires",  "fmt": {"bix": 184, "len": 16, "max": 4095.875,  "min": -4096,                    "div": 8,     "sign": true, "unit": "degrees"      }, "name": "4WD steering wheel angle"},
+    {"id": "HYUNDAI_AWD_CLU_TQ",              "path": "Engine", "fmt": {"bix": 200, "len": 16, "max": 2047.9375, "min": -2048,                    "div": 16,    "sign": true, "unit": "newtonMeters" }, "name": "4WD clutch torque"},
+    {"id": "HYUNDAI_AWD_CLU_P",               "path": "Engine", "fmt": {"bix": 216, "len": 16, "max": 63.99,     "min": -63.99,  "mul": 0.001953,               "sign": true, "unit": "bars"         }, "name": "4WD clutch pressure"}
   ]},
 { "hdr": "740", "rax": "748", "dbg": true, "cmd": {"22": "01A3"}, "freq": 0.25,
   "signals": [
-    {"id": "HYUNDAI_AWD_CALC_CLU_POWER", "path": "Engine",   "fmt": {"bix": 56,  "len": 16, "max": 255,                       "mul": 39.062, "div": 10000,                                       "unit": "kilowattHours" },             "name": "4WD calculated clutch power"},
-    {"id": "HYUNDAI_AWD_FRONT_AXLE_RAT", "path": "Engine",   "fmt": {"bix": 56,  "len": 16, "max": 0.999,     "min": -1,      "mul": 2,      "div": 65535,           "sign": true,               "unit": "scalar"        },             "name": "4WD front axle ratio"},
-    {"id": "HYUNDAI_AWD_CALC_ENG_POWER", "path": "Engine",   "fmt": {"bix": 72,  "len": 16, "max": 64,                        "mul": 9.766,  "div": 10000,                                       "unit": "kilowattHours" },             "name": "4WD calculated engine power"},
-    {"id": "HYUNDAI_AWD_RPM",            "path": "Movement", "fmt": {"bix": 112, "len": 16, "blsb": true,     "max": 16383.5, "min": -16384,               "div": 2,               "sign": true,                         "unit": "bars" },                                                     "name": "4WD engine RPM"},
-    {"id": "HYUNDAI_AWD_AXLE_SPD_DIFF",  "path": "Movement", "fmt": {"bix": 144, "len": 16, "max": 2047.9375, "min": -2048,                  "div": 16,              "sign": true,               "unit": "rpm"           },             "name": "4WD delta speed between front and rear axle"}
+    {"id": "HYUNDAI_CRUZ_AWD_CALC_CLU_POWER", "path": "Engine",   "fmt": {"bix": 56,  "len": 16, "max": 255,                       "mul": 39.062, "div": 10000,                                       "unit": "kilowattHours" },             "name": "4WD calculated clutch power"},
+    {"id": "HYUNDAI_AWD_FRONT_AXLE_RAT",      "path": "Engine",   "fmt": {"bix": 56,  "len": 16, "max": 0.999,     "min": -1,      "mul": 2,      "div": 65535,           "sign": true,               "unit": "scalar"        },             "name": "4WD front axle ratio"},
+    {"id": "HYUNDAI_CRUZ_AWD_CALC_ENG_POWER", "path": "Engine",   "fmt": {"bix": 72,  "len": 16, "max": 64,                        "mul": 9.766,  "div": 10000,                                       "unit": "kilowattHours" },             "name": "4WD calculated engine power"},
+    {"id": "HYUNDAI_AWD_RPM",                 "path": "Movement", "fmt": {"bix": 112, "len": 16, "blsb": true,     "max": 16383.5, "min": -16384,               "div": 2,               "sign": true,                         "unit": "bars" },                                                     "name": "4WD engine RPM"},
+    {"id": "HYUNDAI_AWD_AXLE_SPD_DIFF",       "path": "Movement", "fmt": {"bix": 144, "len": 16, "max": 2047.9375, "min": -2048,                  "div": 16,              "sign": true,               "unit": "rpm"           },             "name": "4WD delta speed between front and rear axle"}
   ]},
 { "hdr": "744", "rax": "74C", "fcm1": true, "dbg": true, "cmd": {"22": "E001"}, "freq": 1,
   "signals": [
@@ -967,8 +967,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "ED02"}, "freq": 5,
   "signals": [
-    {"id": "HYUNDAI_EOT_V2", "path": "Engine", "fmt": {"bix": 184, "len": 8, "max": 251, "min": -4, "add": -4, "unit": "celsius" }, "name": "Engine oil temperature", "suggestedMetric": "engineOilTemperature"},
-    {"id": "HYUNDAI_EOT_V2", "path": "Engine", "fmt": {"bix": 184, "len": 8, "max": 215, "min": -4, "add": -4, "unit": "celsius" }, "name": "Engine oil temperature"}
+    {"id": "HYUNDAI_EOT_V2", "path": "Engine", "fmt": {"bix": 184, "len": 8, "max": 251, "min": -4,  "add": -4, "unit": "celsius" }, "name": "Engine oil temperature", "suggestedMetric": "engineOilTemperature"},
+    {"id": "HYUNDAI_EOT_V2", "path": "Engine", "fmt": {"bix": 184, "len": 8, "max": 215, "min": -40, "add": -4, "unit": "celsius" }, "name": "Engine oil temperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "fcm1": true, "dbg": true, "cmd": {"22": "ED03"}, "freq": 3600,
   "signals": [
@@ -1009,8 +1009,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "fcm1": true, "dbg": true, "cmd": {"22": "ED07"}, "freq": 5,
   "signals": [
-    {"id": "HYUNDAI_EOT_7E0_V2",  "path": "Engine", "fmt": {"bix": 152, "len": 8, "max": 149.9965, "min": -50, "mul": 0.7843, "add": -50, "unit": "celsius" }, "name": "Engine oil temperature", "suggestedMetric": "engineOilTemperature"},
-    {"id": "HYUNDAI_EOT_7E0_7E0", "path": "Engine", "fmt": {"bix": 152, "len": 8, "max": 149.9965, "min": -50, "mul": 0.7843, "add": -50, "unit": "celsius" }, "name": "Engine oil temperature"}
+    {"id": "HYUNDAI_EOT_7E0_V2", "path": "Engine", "fmt": {"bix": 152, "len": 8, "max": 149.9965, "min": -50, "mul": 0.7843, "add": -50, "unit": "celsius" }, "name": "Engine oil temperature", "suggestedMetric": "engineOilTemperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "ED08"}, "freq": 5,
   "signals": [

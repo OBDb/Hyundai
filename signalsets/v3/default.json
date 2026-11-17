@@ -153,8 +153,9 @@
   ]},
 { "hdr": "770", "rax": "778", "dbg": true, "cmd": {"22": "BC05"}, "freq": 1,
   "signals": [
-    {"id": "HYUNDAI_HAZARD_SW", "path": "Lights", "fmt": {"bix": 32, "len": 8, "max": 255,                             "unit": "scalar" }, "name": "Hazard switch"},
-    {"id": "HYUNDAI_HL_SW",     "path": "Lights", "fmt": {"bix": 48, "len": 8, "max": 1,   "nullmin": 0, "nullmax": 2, "unit": "noyes"  }, "name": "Headlight switch"}
+    {"id": "HYUNDAI_HAZARD_SW",  "path": "Lights", "fmt": {"bix": 32, "len": 8, "max": 255,                             "unit": "scalar" }, "name": "Hazard switch"},
+    {"id": "HYUNDAI_HL_SW",      "path": "Lights", "fmt": {"bix": 48, "len": 8, "max": 1,   "nullmin": 0, "nullmax": 2, "unit": "noyes"  }, "name": "Headlight switch"},
+    {"id": "HYUNDAI_CRUZ_HL_SW", "path": "Lights", "fmt": {"bix": 48, "len": 8, "max": 2,   "nullmin": 0, "nullmax": 2, "unit": "noyes"  }, "name": "Headlight switch"}
   ]},
 { "hdr": "770", "rax": "778", "dbg": true, "cmd": {"22": "BC06"}, "freq": 0.25,
   "signals": [
@@ -318,13 +319,14 @@
   ]},
 { "hdr": "7C6", "rax": "7CE", "dbg": true, "cmd": {"22": "B002"}, "freq": 1,
   "signals": [
-    {"id": "HYUNDAI_FLI_VOL",              "path": "Fuel",       "fmt": {"bix": 32, "len": 8,  "max": 127.5,      "div": 2,                  "nullmax": 127.5, "unit": "liters"     }, "name": "Fuel level, volume", "suggestedMetric": "fuelTankLevel"},
-    {"id": "HYUNDAI_FLI_VOL_THIRDGEN",     "path": "Fuel",       "fmt": {"bix": 32, "len": 8,  "max": 127.5,      "div": 2,                                    "unit": "liters"     }, "name": "Fuel level",         "suggestedMetric": "fuelTankLevel"},
-    {"id": "HYUNDAI_CLUSTER_VOLTAGE",      "path": "Electrical", "fmt": {"bix": 40, "len": 8,  "max": 18,         "div": 12.8,                                 "unit": "volts"      }, "name": "Cluster voltage",    "suggestedMetric": "starterBatteryVoltage"},
+    {"id": "HYUNDAI_FLI_VOL",              "path": "Fuel",       "fmt": {"bix": 32, "len": 8,  "max": 127.5,      "div": 2,                  "nullmax": 127.5, "unit": "liters"     }, "name": "Fuel level, volume",  "suggestedMetric": "fuelTankLevel"},
+    {"id": "HYUNDAI_FLI_VOL_THIRDGEN",     "path": "Fuel",       "fmt": {"bix": 32, "len": 8,  "max": 127.5,      "div": 2,                                    "unit": "liters"     }, "name": "Fuel level",          "suggestedMetric": "fuelTankLevel"},
+    {"id": "HYUNDAI_CLUSTER_VOLTAGE",      "path": "Electrical", "fmt": {"bix": 40, "len": 8,  "max": 18,         "div": 12.8,                                 "unit": "volts"      }, "name": "Cluster voltage",     "suggestedMetric": "starterBatteryVoltage"},
     {"id": "HYUNDAI_CRUZ_CLUSTER_VOLTAGE", "path": "Electrical", "fmt": {"bix": 40, "len": 8,  "max": 18,         "div": 12.8,                                 "unit": "volts"      }, "name": "Cluster voltage"},
-    {"id": "HYUNDAI_ODO_KM",               "path": "Trips",      "fmt": {"bix": 48, "len": 24, "max": 16777215,                "nullmin": 0,                   "unit": "kilometers" }, "name": "Odometer, metric",   "suggestedMetric": "odometer"},
-    {"id": "HYUNDAI_ODO",                  "path": "Trips",      "fmt": {"bix": 48, "len": 24, "max": 4294967295,                                              "unit": "kilometers" }, "name": "Odometer",           "suggestedMetric": "odometer"},
-    {"id": "HYUNDAI_ODO_MI",               "path": "Trips",      "fmt": {"bix": 72, "len": 24, "max": 16777215,                "nullmin": 0,                   "unit": "miles"      }, "name": "Odometer, imperial", "suggestedMetric": "odometer"}
+    {"id": "HYUNDAI_VPWR",                 "path": "Battery",    "fmt": {"bix": 40, "len": 8,  "max": 18,         "div": 12.8, "nullmin": 0,                   "unit": "volts"      }, "name": "12v battery voltage", "suggestedMetric": "starterBatteryVoltage"},
+    {"id": "HYUNDAI_ODO_KM",               "path": "Trips",      "fmt": {"bix": 48, "len": 24, "max": 16777215,                "nullmin": 0,                   "unit": "kilometers" }, "name": "Odometer, metric",    "suggestedMetric": "odometer"},
+    {"id": "HYUNDAI_ODO",                  "path": "Trips",      "fmt": {"bix": 48, "len": 24, "max": 4294967295,                                              "unit": "kilometers" }, "name": "Odometer",            "suggestedMetric": "odometer"},
+    {"id": "HYUNDAI_ODO_MI",               "path": "Trips",      "fmt": {"bix": 72, "len": 24, "max": 16777215,                "nullmin": 0,                   "unit": "miles"      }, "name": "Odometer, imperial",  "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7D1", "rax": "7D9", "dbg": true, "cmd": {"21": "01"}, "freq": 1,
   "signals": [
@@ -478,6 +480,7 @@
     {"id": "HYUNDAI_ENGINE_COOLANT_T_FD",                   "path": "Engine",   "fmt": {"bix": 200, "len": 8,  "max": 143.25, "min": -48,      "mul": 0.75,                      "add": -48, "unit": "celsius" },                   "name": "Engine coolant temperature"},
     {"id": "HYUNDAI_IAT_SENSOR_VOLTAGE",                    "path": "Battery",  "fmt": {"bix": 248, "len": 16, "blsb": true,  "max": 319.9951,              "mul": 0.0048828125,                               "unit": "volts"      },                                                          "name": "Intake air temperature sensor voltage"},
     {"id": "HYUNDAI_INTAKE_AIR_T",                          "path": "Engine",   "fmt": {"bix": 264, "len": 8,  "max": 143.25, "min": -48,      "mul": 0.75,                      "add": -48, "unit": "celsius" },                   "name": "Intake air temperature",                           "suggestedMetric": "intakeAirTemperature"},
+    {"id": "HYUNDAI_INTAKE_AIR_T_FD",                       "path": "Engine",   "fmt": {"bix": 264, "len": 8,  "max": 143.25, "min": -48,      "mul": 0.75,                      "add": -48, "unit": "celsius" },                   "name": "Intake air temperature"},
     {"id": "HYUNDAI_ENGINE_OIL_T",                          "path": "Engine",   "fmt": {"bix": 272, "len": 8,  "max": 143.25, "min": -48,      "mul": 0.75,                      "add": -48, "unit": "celsius" },                   "name": "Engine oil temperature",                           "suggestedMetric": "engineOilTemperature"},
     {"id": "HYUNDAI_ENGINE_OIL_T_FD",                       "path": "Engine",   "fmt": {"bix": 272, "len": 8,  "max": 143.25, "min": -48,      "mul": 0.75,                      "add": -48, "unit": "celsius" },                   "name": "Engine oil temperature"}
   ]},
@@ -1185,11 +1188,11 @@
   ]},
 { "hdr": "7E2", "rax": "7EA", "dbg": true, "cmd": {"22": "E004"}, "freq": 1,
   "signals": [
-    {"id": "HYUNDAI_ACCELERATOR_PEDAL_POSITION", "path": "Control",  "fmt": {"bix": 64,  "len": 16, "blsb": true, "max": 100,                             "div": 512,                                   "unit": "percent"           },                             "name": "Accelerator pedal position"},
-    {"id": "HYUNDAI_VSS_HD",                     "path": "Movement", "fmt": {"bix": 80,  "len": 16, "blsb": true, "max": 511, "min": -512, "mul": 156.25, "div": 10000, "sign": true,                   "unit": "kilometersPerHour" },                             "name": "Vehicle speed, high resolution", "suggestedMetric": "speed"},
-    {"id": "HYUNDAI_12V_V",                      "path": "Battery",  "fmt": {"bix": 96,  "len": 16, "blsb": true, "max": 32,               "mul": 4.883,  "div": 10000,                                 "unit": "volts"             },                             "name": "Auxiliary battery voltage",      "suggestedMetric": "starterBatteryVoltage"},
-    {"id": "HYUNDAI_VPWR_V3",                    "path": "Battery",  "fmt": {"bix": 152, "len": 8,  "max": 25.5,                           "div": 10,                                 "unit": "volts"   },                          "name": "12V battery voltage"},
-    {"id": "HYUNDAI_VPWR_7E2",                   "path": "Battery",  "fmt": {"bix": 152, "len": 8,  "max": 100,                                                                       "unit": "percent" },                          "name": "12V battery charge"}
+    {"id": "HYUNDAI_ACCELERATOR_PEDAL_POSITION", "path": "Control",  "fmt": {"bix": 64,  "len": 16, "blsb": true, "max": 100,                             "div": 512,                                                 "unit": "percent"           },                             "name": "Accelerator pedal position"},
+    {"id": "HYUNDAI_VSS_HD",                     "path": "Movement", "fmt": {"bix": 80,  "len": 16, "blsb": true, "max": 511, "min": -512, "mul": 156.25, "div": 10000, "sign": true,                                 "unit": "kilometersPerHour" },                             "name": "Vehicle speed, high resolution", "suggestedMetric": "speed"},
+    {"id": "HYUNDAI_12V_V",                      "path": "Battery",  "fmt": {"bix": 96,  "len": 16, "blsb": true, "max": 32,               "mul": 4.883,  "div": 10000,               "nullmin": 0,                   "unit": "volts"             },                             "name": "Auxiliary battery voltage",      "suggestedMetric": "starterBatteryVoltage"},
+    {"id": "HYUNDAI_VPWR_V3",                    "path": "Battery",  "fmt": {"bix": 152, "len": 8,  "max": 25.5,                           "div": 10,                                               "unit": "volts"   },                          "name": "12V battery voltage"},
+    {"id": "HYUNDAI_VPWR_7E2",                   "path": "Battery",  "fmt": {"bix": 152, "len": 8,  "max": 100,                                                                                     "unit": "percent" },                          "name": "12V battery charge"}
   ]},
 { "hdr": "7E2", "rax": "7EA", "dbg": true, "cmd": {"22": "E005"}, "freq": 1,
   "signals": [
@@ -1548,7 +1551,7 @@
     {"id": "HYUNDAI_BATTERY_FAN_FEEDBACK",         "path": "Battery",  "fmt": {"bix": 224, "len": 8,  "max": 120,                                                                                               "unit": "hertz"         }, "name": "Battery fan feedback"},
     {"id": "HYUNDAI_VPWR_V2",                      "path": "Battery",  "fmt": {"bix": 232, "len": 8,  "max": 25.5,                        "div": 10,                            "nullmin": 0,                   "unit": "volts"         }, "name": "Battery auxiliary voltage",            "suggestedMetric": "starterBatteryVoltage"},
     {"id": "HYUNDAI_AUXILLARY_BATTERY_VOLTAGE",    "path": "Battery",  "fmt": {"bix": 232, "len": 8,  "max": 14.6,        "min": 11,      "div": 10,                                                            "unit": "volts"         }, "name": "Auxiliary battery voltage"},
-    {"id": "HYUNDAI_VPWR",                         "path": "Battery",  "fmt": {"bix": 232, "len": 8,  "max": 25.5,                        "div": 10,                                                            "unit": "volts"         }, "name": "Battery auxiliary voltage",            "suggestedMetric": "starterBatteryVoltage"},
+    {"id": "HYUNDAI_VPWR_V2",                      "path": "Battery",  "fmt": {"bix": 232, "len": 8,  "max": 25.5,                        "div": 10,                                                            "unit": "volts"         }, "name": "Battery auxiliary voltage",            "suggestedMetric": "starterBatteryVoltage"},
     {"id": "HYUNDAI_HVBAT_CHRG_TOT_C",             "path": "Battery",  "fmt": {"bix": 240, "len": 32, "max": 429496729,                   "div": 10,                                                            "unit": "ampereHours"   }, "name": "Total charge current"},
     {"id": "HYUNDAI_CUMULATIVE_CHARGE_CURRENT",    "path": "Battery",  "fmt": {"bix": 240, "len": 32, "max": 429496729.5,                 "div": 10,                                                            "unit": "ampereHours"   }, "name": "Cumulative charge current"},
     {"id": "HYUNDAI_HVBAT_DSCH_TOT_C",             "path": "Battery",  "fmt": {"bix": 272, "len": 32, "max": 429496729,                   "div": 10,                                                            "unit": "ampereHours"   }, "name": "Total discharge current"},
@@ -2043,14 +2046,15 @@
   ]},
 { "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "E101"}, "freq": 1,
   "signals": [
-    {"id": "HYUNDAI_2025_LDC_T",                       "path": "Battery", "fmt": {"bix": 72,  "len": 8,  "max": 155,     "min": -100,                         "add": -100, "unit": "celsius" }, "name": "Low-voltage dc-dc converter, temperature"},
-    {"id": "HYUNDAI_2025_LDC_OUTPUT_VOLTAGE",          "path": "Battery", "fmt": {"bix": 80,  "len": 16, "max": 65.535,                          "div": 1000,              "unit": "volts"   }, "name": "Low-voltage dc-dc converter, output voltage"},
-    {"id": "HYUNDAI_2025_LDC_OUTPUT_CURRENT",          "path": "Battery", "fmt": {"bix": 96,  "len": 16, "max": 655.35,               "mul": 10, "div": 1000,              "unit": "amps"    }, "name": "Low-voltage dc-dc converter, output current"},
-    {"id": "HYUNDAI_2025_LDC_INPUT_VOLTAGE",           "path": "Battery", "fmt": {"bix": 112, "len": 16, "max": 6553.5,                          "div": 10,                "unit": "volts"   }, "name": "Low-voltage dc-dc converter, input voltage"},
-    {"id": "HYUNDAI_2025_AUX_BATTERY_CURRENT",         "path": "Battery", "fmt": {"bix": 144, "len": 16, "max": 328.35,  "min": -327,            "div": 100,  "add": -327, "unit": "amps"    }, "name": "Auxiliary battery current"},
-    {"id": "HYUNDAI_2025_AUX_BATTERY_STATE_OF_CHARGE", "path": "Battery", "fmt": {"bix": 160, "len": 8,  "max": 100,                                                       "unit": "percent" }, "name": "Auxiliary battery state of charge"},
-    {"id": "HYUNDAI_2025_AUX_BATTERY_VOLTAGE",         "path": "Battery", "fmt": {"bix": 168, "len": 16, "max": 71.535,  "min": 6,               "div": 1000, "add": 6,    "unit": "volts"   }, "name": "Auxiliary battery voltage",                   "suggestedMetric": "starterBatteryVoltage"},
-    {"id": "HYUNDAI_2025_AUX_BATTERY_T",               "path": "Battery", "fmt": {"bix": 184, "len": 16, "max": 32727.5, "min": -40,             "div": 2,    "add": -40,  "unit": "celsius" }, "name": "Auxiliary battery temperature"}
+    {"id": "HYUNDAI_2025_LDC_T",                       "path": "Battery", "fmt": {"bix": 72,  "len": 8,  "max": 155,     "min": -100,                         "add": -100,                    "unit": "celsius" }, "name": "Low-voltage dc-dc converter, temperature"},
+    {"id": "HYUNDAI_2025_LDC_OUTPUT_VOLTAGE",          "path": "Battery", "fmt": {"bix": 80,  "len": 16, "max": 65.535,                          "div": 1000,                                 "unit": "volts"   }, "name": "Low-voltage dc-dc converter, output voltage"},
+    {"id": "HYUNDAI_2025_LDC_OUTPUT_CURRENT",          "path": "Battery", "fmt": {"bix": 96,  "len": 16, "max": 655.35,               "mul": 10, "div": 1000,                                 "unit": "amps"    }, "name": "Low-voltage dc-dc converter, output current"},
+    {"id": "HYUNDAI_2025_LDC_INPUT_VOLTAGE",           "path": "Battery", "fmt": {"bix": 112, "len": 16, "max": 6553.5,                          "div": 10,                                   "unit": "volts"   }, "name": "Low-voltage dc-dc converter, input voltage"},
+    {"id": "HYUNDAI_2025_AUX_BATTERY_CURRENT",         "path": "Battery", "fmt": {"bix": 144, "len": 16, "max": 328.35,  "min": -327,            "div": 100,  "add": -327,                    "unit": "amps"    }, "name": "Auxiliary battery current"},
+    {"id": "HYUNDAI_2025_AUX_BATTERY_STATE_OF_CHARGE", "path": "Battery", "fmt": {"bix": 160, "len": 8,  "max": 100,                                                                          "unit": "percent" }, "name": "Auxiliary battery state of charge"},
+    {"id": "HYUNDAI_2025_AUX_BATTERY_VOLTAGE",         "path": "Battery", "fmt": {"bix": 168, "len": 16, "max": 71.535,  "min": 6,               "div": 1000, "add": 6,    "nullmax": 71.535, "unit": "volts"   }, "name": "Auxiliary battery voltage",                   "suggestedMetric": "starterBatteryVoltage"},
+    {"id": "HYUNDAI_AUX_BATTERY_VOLTAGE_E101",         "path": "Battery", "fmt": {"bix": 168, "len": 16, "max": 71.535,  "min": 6,               "div": 1000, "add": 6,                       "unit": "volts"   }, "name": "Auxiliary battery voltage",                   "suggestedMetric": "starterBatteryVoltage"},
+    {"id": "HYUNDAI_2025_AUX_BATTERY_T",               "path": "Battery", "fmt": {"bix": 184, "len": 16, "max": 32727.5, "min": -40,             "div": 2,    "add": -40,                     "unit": "celsius" }, "name": "Auxiliary battery temperature"}
   ]},
 { "hdr": "7E6", "rax": "7EE", "fcm1": true, "dbg": true, "cmd": {"21": "80"}, "freq": 30,
   "signals": [

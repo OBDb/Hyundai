@@ -50,25 +50,34 @@
   ]},
 { "hdr": "740", "rax": "748", "dbg": true, "cmd": {"22": "01A1"}, "freq": 0.25,
   "signals": [
-    {"id": "HYUNDAI_CRUZ_AWD_CALC_CMD_TQ",    "path": "Engine", "fmt": {"bix": 40,  "len": 16, "max": 4095.875,  "min": -4096,                    "div": 8,     "sign": true, "unit": "newtonMeters" }, "name": "4WD calculated, commanded torque"},
-    {"id": "HYUNDAI_CRUZ_AWD_PMP_PWM_DUTY",   "path": "Engine", "fmt": {"bix": 56,  "len": 16, "max": 100,       "min": -3276.8,                  "div": 10,    "sign": true, "unit": "percent"      }, "name": "4WD pump PWM duty"},
-    {"id": "HYUNDAI_AWD_CLU_DUTY",            "path": "Engine", "fmt": {"bix": 72,  "len": 16, "max": 100,       "min": -3276.8,                  "div": 10,    "sign": true, "unit": "percent"      }, "name": "4WD clutch duty"},
-    {"id": "HYUNDAI_CRUZ_AWD_MAX_CLU_STRESS", "path": "Engine", "fmt": {"bix": 88,  "len": 16, "max": 100,                       "mul": 19.531,   "div": 10000,               "unit": "percent"      }, "name": "4WD max clutch stress"},
-    {"id": "HYUNDAI_AWD_CLU_STRESS",          "path": "Engine", "fmt": {"bix": 104, "len": 16, "max": 63.99,     "min": -63.99,  "mul": 0.001953,               "sign": true, "unit": "percent"      }, "name": "4WD clutch stress"},
-    {"id": "HYUNDAI_CRUZ_AWD_PMP_CURRENT",    "path": "Engine", "fmt": {"bix": 112, "len": 16, "max": 255,       "min": -256,    "mul": 78.125,   "div": 10000, "sign": true, "unit": "amps"         }, "name": "4WD pump current"},
-    {"id": "HYUNDAI_CRUZ_AWD_CLU_ACT_TQ",     "path": "Engine", "fmt": {"bix": 128, "len": 16, "max": 4095.875,  "min": -4096,                    "div": 8,     "sign": true, "unit": "newtonMeters" }, "name": "4WD clutch, actual torque"},
-    {"id": "HYUNDAI_CRUZ_AWD_CLU_ACT_P",      "path": "Engine", "fmt": {"bix": 144, "len": 16, "max": 63.99,     "min": -63.99,  "mul": 19.53,    "div": 10000, "sign": true, "unit": "bars"         }, "name": "4WD clutch, actual pressure"},
-    {"id": "HYUNDAI_AWD_STEER_WHL_ANG",       "path": "Tires",  "fmt": {"bix": 184, "len": 16, "max": 4095.875,  "min": -4096,                    "div": 8,     "sign": true, "unit": "degrees"      }, "name": "4WD steering wheel angle"},
-    {"id": "HYUNDAI_AWD_CLU_TQ",              "path": "Engine", "fmt": {"bix": 200, "len": 16, "max": 2047.9375, "min": -2048,                    "div": 16,    "sign": true, "unit": "newtonMeters" }, "name": "4WD clutch torque"},
-    {"id": "HYUNDAI_AWD_CLU_P",               "path": "Engine", "fmt": {"bix": 216, "len": 16, "max": 63.99,     "min": -63.99,  "mul": 0.001953,               "sign": true, "unit": "bars"         }, "name": "4WD clutch pressure"}
+    {"id": "HYUNDAI_CRUZ_AWD_CALC_CMD_TQ",    "path": "Engine",       "fmt": {"bix": 40,  "len": 16, "max": 4095.875,  "min": -4096,                    "div": 8,      "sign": true, "unit": "newtonMeters" }, "name": "4WD calculated, commanded torque"},
+    {"id": "HYUNDAI_COMPUTED_COMMAND_TQ",     "path": "Engine",       "fmt": {"bix": 40,  "len": 16, "max": 8191,                                       "div": 8,                    "unit": "newtonMeters" }, "name": "Computed command torque"},
+    {"id": "HYUNDAI_CRUZ_AWD_PMP_PWM_DUTY",   "path": "Engine",       "fmt": {"bix": 56,  "len": 16, "max": 100,       "min": -3276.8,                  "div": 10,     "sign": true, "unit": "percent"      }, "name": "4WD pump PWM duty"},
+    {"id": "HYUNDAI_MOTOR_PWM_DUTY",          "path": "Engine",       "fmt": {"bix": 56,  "len": 16, "max": 6553,                                       "div": 10,                   "unit": "percent"      }, "name": "Motor PWM duty"},
+    {"id": "HYUNDAI_ENG_CTRL_MODULE_PCB_T",   "path": "Engine",       "fmt": {"bix": 72,  "len": 16, "max": 511,       "min": -511,    "mul": 781,      "div": 50000,  "sign": true, "unit": "celsius"      }, "name": "Coupling module circuit board temperature"},
+    {"id": "HYUNDAI_AWD_CLU_DUTY",            "path": "Engine",       "fmt": {"bix": 72,  "len": 16, "max": 100,       "min": -3276.8,                  "div": 10,     "sign": true, "unit": "percent"      }, "name": "4WD clutch duty"},
+    {"id": "HYUNDAI_CRUZ_AWD_MAX_CLU_STRESS", "path": "Engine",       "fmt": {"bix": 88,  "len": 16, "max": 100,                       "mul": 19.531,   "div": 10000,                "unit": "percent"      }, "name": "4WD max clutch stress"},
+    {"id": "HYUNDAI_MAX_CLU_STRESS",          "path": "Transmission", "fmt": {"bix": 88,  "len": 16, "max": 128,                       "mul": 128,      "div": 65535,                "unit": "percent"      }, "name": "Max clutch stress"},
+    {"id": "HYUNDAI_AWD_CLU_STRESS",          "path": "Engine",       "fmt": {"bix": 104, "len": 16, "max": 63.99,     "min": -63.99,  "mul": 0.001953,                "sign": true, "unit": "percent"      }, "name": "4WD clutch stress"},
+    {"id": "HYUNDAI_CRUZ_AWD_PMP_CURRENT",    "path": "Engine",       "fmt": {"bix": 112, "len": 16, "max": 255,       "min": -256,    "mul": 78.125,   "div": 10000,  "sign": true, "unit": "amps"         }, "name": "4WD pump current"},
+    {"id": "HYUNDAI_MOTOR_CURRENT",           "path": "Engine",       "fmt": {"bix": 112, "len": 16, "max": 255,       "min": -255,    "mul": 781,      "div": 100000, "sign": true, "unit": "amps"         }, "name": "Motor current"},
+    {"id": "HYUNDAI_CRUZ_AWD_CLU_ACT_TQ",     "path": "Engine",       "fmt": {"bix": 128, "len": 16, "max": 4095.875,  "min": -4096,                    "div": 8,      "sign": true, "unit": "newtonMeters" }, "name": "4WD clutch, actual torque"},
+    {"id": "HYUNDAI_ACT_CLU_TQ",              "path": "Transmission", "fmt": {"bix": 128, "len": 16, "max": 4095,      "min": -4096,                    "div": 8,      "sign": true, "unit": "newtonMeters" }, "name": "Actual clutch torque"},
+    {"id": "HYUNDAI_CRUZ_AWD_CLU_ACT_P",      "path": "Engine",       "fmt": {"bix": 144, "len": 16, "max": 63.99,     "min": -63.99,  "mul": 19.53,    "div": 10000,  "sign": true, "unit": "bars"         }, "name": "4WD clutch, actual pressure"},
+    {"id": "HYUNDAI_ACT_CLU_P",               "path": "Transmission", "fmt": {"bix": 144, "len": 16, "max": 63.89,     "min": -63.89,  "mul": 39,       "div": 20000,  "sign": true, "unit": "bars"         }, "name": "Actual clutch pressure"},
+    {"id": "HYUNDAI_AWD_STEER_WHL_ANG",       "path": "Tires",        "fmt": {"bix": 184, "len": 16, "max": 4095.875,  "min": -4096,                    "div": 8,      "sign": true, "unit": "degrees"      }, "name": "4WD steering wheel angle"},
+    {"id": "HYUNDAI_AWD_CLU_TQ",              "path": "Engine",       "fmt": {"bix": 200, "len": 16, "max": 2047.9375, "min": -2048,                    "div": 16,     "sign": true, "unit": "newtonMeters" }, "name": "4WD clutch torque"},
+    {"id": "HYUNDAI_AWD_CLU_P",               "path": "Engine",       "fmt": {"bix": 216, "len": 16, "max": 63.99,     "min": -63.99,  "mul": 0.001953,                "sign": true, "unit": "bars"         }, "name": "4WD clutch pressure"}
   ]},
 { "hdr": "740", "rax": "748", "dbg": true, "cmd": {"22": "01A3"}, "freq": 0.25,
   "signals": [
-    {"id": "HYUNDAI_CRUZ_AWD_CALC_CLU_POWER", "path": "Engine",   "fmt": {"bix": 56,  "len": 16, "max": 255,                       "mul": 39.062, "div": 10000,                                       "unit": "kilowattHours" },             "name": "4WD calculated clutch power"},
-    {"id": "HYUNDAI_AWD_FRONT_AXLE_RAT",      "path": "Engine",   "fmt": {"bix": 56,  "len": 16, "max": 0.999,     "min": -1,      "mul": 2,      "div": 65535,           "sign": true,               "unit": "scalar"        },             "name": "4WD front axle ratio"},
-    {"id": "HYUNDAI_CRUZ_AWD_CALC_ENG_POWER", "path": "Engine",   "fmt": {"bix": 72,  "len": 16, "max": 64,                        "mul": 9.766,  "div": 10000,                                       "unit": "kilowattHours" },             "name": "4WD calculated engine power"},
-    {"id": "HYUNDAI_AWD_RPM",                 "path": "Movement", "fmt": {"bix": 112, "len": 16, "blsb": true,     "max": 16383.5, "min": -16384,               "div": 2,               "sign": true,                         "unit": "bars" },                                                     "name": "4WD engine RPM"},
-    {"id": "HYUNDAI_AWD_AXLE_SPD_DIFF",       "path": "Movement", "fmt": {"bix": 144, "len": 16, "max": 2047.9375, "min": -2048,                  "div": 16,              "sign": true,               "unit": "rpm"           },             "name": "4WD delta speed between front and rear axle"}
+    {"id": "HYUNDAI_CRUZ_AWD_CALC_CLU_POWER", "path": "Engine",       "fmt": {"bix": 56,  "len": 16, "max": 255,                       "mul": 39.062, "div": 10000,                                       "unit": "kilowattHours" },             "name": "4WD calculated clutch power"},
+    {"id": "HYUNDAI_COMPUTED_CLU_WORK",       "path": "Transmission", "fmt": {"bix": 56,  "len": 16, "max": 256,                       "mul": 256,    "div": 65535,                                       "unit": "kilowattHours" },             "name": "Computed clutch work"},
+    {"id": "HYUNDAI_AWD_FRONT_AXLE_RAT",      "path": "Engine",       "fmt": {"bix": 56,  "len": 16, "max": 0.999,     "min": -1,      "mul": 2,      "div": 65535,           "sign": true,               "unit": "scalar"        },             "name": "4WD front axle ratio"},
+    {"id": "HYUNDAI_CRUZ_AWD_CALC_ENG_POWER", "path": "Engine",       "fmt": {"bix": 72,  "len": 16, "max": 64,                        "mul": 9.766,  "div": 10000,                                       "unit": "kilowattHours" },             "name": "4WD calculated engine power"},
+    {"id": "HYUNDAI_COMPUTED_MOTOR_WORK",     "path": "Engine",       "fmt": {"bix": 72,  "len": 16, "max": 64,                        "mul": 64,     "div": 65535,                                       "unit": "kilowattHours" },             "name": "Computed motor work"},
+    {"id": "HYUNDAI_AWD_RPM",                 "path": "Movement",     "fmt": {"bix": 112, "len": 16, "blsb": true,     "max": 16383.5, "min": -16384,               "div": 2,               "sign": true,                         "unit": "bars" },                                                     "name": "4WD engine RPM"},
+    {"id": "HYUNDAI_AWD_AXLE_SPD_DIFF",       "path": "Movement",     "fmt": {"bix": 144, "len": 16, "max": 2047.9375, "min": -2048,                  "div": 16,              "sign": true,               "unit": "rpm"           },             "name": "4WD delta speed between front and rear axle"}
   ]},
 { "hdr": "744", "rax": "74C", "fcm1": true, "dbg": true, "cmd": {"22": "E001"}, "freq": 1,
   "signals": [
@@ -971,31 +980,36 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "ED02"}, "freq": 5,
   "signals": [
-    {"id": "HYUNDAI_EOT_V2", "path": "Engine", "fmt": {"bix": 184, "len": 8, "max": 251, "min": -4,  "add": -4, "unit": "celsius" }, "name": "Engine oil temperature", "suggestedMetric": "engineOilTemperature"},
-    {"id": "HYUNDAI_EOT_V2", "path": "Engine", "fmt": {"bix": 184, "len": 8, "max": 215, "min": -40, "add": -4, "unit": "celsius" }, "name": "Engine oil temperature"}
+    {"id": "HYUNDAI_EOT_V2",             "path": "Engine", "fmt": {"bix": 184, "len": 8, "max": 251, "min": -4,                               "add": -4,  "unit": "celsius"     }, "name": "Engine oil temperature",                "suggestedMetric": "engineOilTemperature"},
+    {"id": "HYUNDAI_EOT_7E0_V2",         "path": "Engine", "fmt": {"bix": 184, "len": 8, "max": 215, "min": -40,                              "add": -40, "unit": "celsius"     }, "name": "Engine oil temperature"},
+    {"id": "HYUNDAI_EOT_V2",             "path": "Engine", "fmt": {"bix": 184, "len": 8, "max": 215, "min": -40,                              "add": -4,  "unit": "celsius"     }, "name": "Engine oil temperature"},
+    {"id": "HYUNDAI_ENG_OIL_LEVEL_LAST", "path": "Engine", "fmt": {"bix": 192, "len": 8, "max": 127,             "mul": 42969, "div": 100000, "add": 18,  "unit": "millimeters" }, "name": "Engine oil level - last average value"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "fcm1": true, "dbg": true, "cmd": {"22": "ED03"}, "freq": 3600,
   "signals": [
-    {"id": "HYUNDAI_FUEL_CONS",              "path": "Fuel",   "fmt": {"bix": 40,  "len": 8,  "max": 326.9992,   "mul": 25647,   "div": 20000,            "unit": "liters"     }, "name": "Fuel consumption"},
-    {"id": "HYUNDAI_EXH_GAS_FLOW_PF",        "path": "Engine", "fmt": {"bix": 256, "len": 8,  "max": 2000000.7,  "mul": 392157,  "div": 50,               "unit": "liters"     }, "name": "Exhaust gas flow in the particulate filter"},
-    {"id": "HYUNDAI_EXH_GAS_T_CAT",          "path": "Engine", "fmt": {"bix": 272, "len": 8,  "max": 1300.05,    "mul": 471,     "div": 100,   "add": 99, "unit": "celsius"    }, "name": "Exhaust gas temperature at catalyst"},
-    {"id": "HYUNDAI_DPF_DIFF_P_7E0",         "path": "Engine", "fmt": {"bix": 288, "len": 8,  "max": 1100,       "mul": 431.373, "div": 100,              "unit": "unknown"    }, "name": "Diesel particulate filter differential pressure"},
-    {"id": "HYUNDAI_NOX_TRAP_OUTLET_P",      "path": "Engine", "fmt": {"bix": 288, "len": 8,  "max": 32767.0002, "mul": 3212451, "div": 25000,            "unit": "unknown"    }, "name": "NOx trap outlet pressure"},
-    {"id": "HYUNDAI_EXH_T_1_UP_OXICAT",      "path": "Engine", "fmt": {"bix": 296, "len": 8,  "max": 1299.999,   "mul": 4.7098,                "add": 99, "unit": "celsius"    }, "name": "Exhaust temperature 1, upstream of oxidation catalyst"},
-    {"id": "HYUNDAI_DPF_LOAD_MODEL",         "path": "Engine", "fmt": {"bix": 296, "len": 8,  "max": 100,                                                 "unit": "percent"    }, "name": "Diesel particulate filter load, from model"},
-    {"id": "HYUNDAI_EXH_T_2_UP_DPF",         "path": "Engine", "fmt": {"bix": 304, "len": 8,  "max": 1299.999,   "mul": 4.7098,                "add": 99, "unit": "celsius"    }, "name": "Exhaust temperature 2, upstream of DPF"},
-    {"id": "HYUNDAI_ODO_LAST_DPF_REGEN_7E0", "path": "Trips",  "fmt": {"bix": 304, "len": 32, "max": 4294967,                    "div": 1000,             "unit": "kilometers" }, "name": "Odometer at last DPF regen"},
-    {"id": "HYUNDAI_REGEN_DEMAND_CNT",       "path": "Engine", "fmt": {"bix": 320, "len": 8,  "max": 255,                                                 "unit": "scalar"     }, "name": "Regeneration demand counter by soot load"},
-    {"id": "HYUNDAI_DPF_ODO_LAST_REGEN",     "path": "Trips",  "fmt": {"bix": 328, "len": 32, "max": 4294967,                    "div": 1000,             "unit": "kilometers" }, "name": "Diesel particulate filter odometer at last regeneration"},
-    {"id": "HYUNDAI_DIST_SINCE_DPF_REGEN",   "path": "Trips",  "fmt": {"bix": 360, "len": 32, "max": 50000,                      "div": 1000,             "unit": "kilometers" }, "name": "Distance since last DPF regeneration"},
-    {"id": "HYUNDAI_DPF_DIST_SINCE_REGEN",   "path": "Trips",  "fmt": {"bix": 360, "len": 32, "max": 4294967,                    "div": 1000,             "unit": "kilometers" }, "name": "Diesel particulate filter distance since last regeneration"},
-    {"id": "HYUNDAI_ODO_7E0",                "path": "Trips",  "fmt": {"bix": 392, "len": 32, "max": 4294967,                    "div": 1000,             "unit": "kilometers" }, "name": "Odometer"},
-    {"id": "HYUNDAI_DPF_REGEN_SUCCESS_ST",   "path": "Engine", "fmt": {"bix": 407, "len": 1,  "max": 1,                                                   "unit": "offon"      }, "name": "Diesel particulate filter regen success state"},
-    {"id": "HYUNDAI_SUCCESSFUL_REGEN_ST",    "path": "Engine", "fmt": {"bix": 424, "len": 8,  "max": 1,                                                   "unit": "scalar"     }, "name": "Successful regeneration state"},
-    {"id": "HYUNDAI_DPF_REGEN_ST",           "path": "Engine", "fmt": {"bix": 431, "len": 1,  "max": 1,                                                   "unit": "offon"      }, "name": "Diesel particulate filter regeneration state"},
-    {"id": "HYUNDAI_FUEL_CONS_SINCE_DPF",    "path": "Fuel",   "fmt": {"bix": 432, "len": 8,  "max": 319,        "mul": 1.2549,                           "unit": "liters"     }, "name": "Fuel consumption since last DPF regeneration"},
-    {"id": "HYUNDAI_DPF_REGEN_DEMAND_CNT",   "path": "Engine", "fmt": {"bix": 432, "len": 8,  "max": 255,                                                 "unit": "scalar"     }, "name": "Diesel particulate filter regen demand counter"},
-    {"id": "HYUNDAI_DPF_REGEN_CNT",          "path": "Engine", "fmt": {"bix": 440, "len": 8,  "max": 255,                                                 "unit": "scalar"     }, "name": "Diesel particulate filter regeneration count"}
+    {"id": "HYUNDAI_FUEL_CONS",              "path": "Fuel",   "fmt": {"bix": 40,  "len": 8,  "max": 326.9992,   "mul": 25647,   "div": 20000,              "unit": "liters"     }, "name": "Fuel consumption"},
+    {"id": "HYUNDAI_EXH_GAS_FLOW_PF",        "path": "Engine", "fmt": {"bix": 256, "len": 8,  "max": 2000000.7,  "mul": 392157,  "div": 50,                 "unit": "liters"     }, "name": "Exhaust gas flow in the particulate filter"},
+    {"id": "HYUNDAI_EXH_GAS_T_CAT",          "path": "Engine", "fmt": {"bix": 272, "len": 8,  "max": 1300.05,    "mul": 471,     "div": 100,    "add": 99,  "unit": "celsius"    }, "name": "Exhaust gas temperature at catalyst"},
+    {"id": "HYUNDAI_DPF_DIFF_P_7E0",         "path": "Engine", "fmt": {"bix": 288, "len": 8,  "max": 1100,       "mul": 431.373, "div": 100,                "unit": "unknown"    }, "name": "Diesel particulate filter differential pressure"},
+    {"id": "HYUNDAI_NOX_TRAP_OUTLET_P",      "path": "Engine", "fmt": {"bix": 288, "len": 8,  "max": 32767.0002, "mul": 3212451, "div": 25000,              "unit": "unknown"    }, "name": "NOx trap outlet pressure"},
+    {"id": "HYUNDAI_DPF_DIFF_P_V2",          "path": "Engine", "fmt": {"bix": 288, "len": 8,  "max": 1200,       "mul": 431373,  "div": 100000, "add": 100, "unit": "unknown"    }, "name": "Diesel particulate filter differential pressure"},
+    {"id": "HYUNDAI_EXH_T_1_UP_OXICAT",      "path": "Engine", "fmt": {"bix": 296, "len": 8,  "max": 1299.999,   "mul": 4.7098,                 "add": 99,  "unit": "celsius"    }, "name": "Exhaust temperature 1, upstream of oxidation catalyst"},
+    {"id": "HYUNDAI_DPF_LOAD_MODEL",         "path": "Engine", "fmt": {"bix": 296, "len": 8,  "max": 100,                                                   "unit": "percent"    }, "name": "Diesel particulate filter load, from model"},
+    {"id": "HYUNDAI_EXH_T_SENS_1_UP",        "path": "Engine", "fmt": {"bix": 296, "len": 8,  "max": 1300,       "mul": 471,     "div": 100,    "add": 99,  "unit": "celsius"    }, "name": "Exhaust temperature sensor 1 value, upstream of the oxidation catalyst"},
+    {"id": "HYUNDAI_EXH_T_2_UP_DPF",         "path": "Engine", "fmt": {"bix": 304, "len": 8,  "max": 1299.999,   "mul": 4.7098,                 "add": 99,  "unit": "celsius"    }, "name": "Exhaust temperature 2, upstream of DPF"},
+    {"id": "HYUNDAI_ODO_LAST_DPF_REGEN_7E0", "path": "Trips",  "fmt": {"bix": 304, "len": 32, "max": 4294967,                    "div": 1000,               "unit": "kilometers" }, "name": "Odometer at last DPF regen"},
+    {"id": "HYUNDAI_EXH_T_SENS_2_UP",        "path": "Engine", "fmt": {"bix": 304, "len": 8,  "max": 1300,       "mul": 471,     "div": 100,    "add": 99,  "unit": "celsius"    }, "name": "Exhaust temperature sensor 2 value, upstream of the oxidation catalyst"},
+    {"id": "HYUNDAI_REGEN_DEMAND_CNT",       "path": "Engine", "fmt": {"bix": 320, "len": 8,  "max": 255,                                                   "unit": "scalar"     }, "name": "Regeneration demand counter by soot load"},
+    {"id": "HYUNDAI_DPF_ODO_LAST_REGEN",     "path": "Trips",  "fmt": {"bix": 328, "len": 32, "max": 4294967,                    "div": 1000,               "unit": "kilometers" }, "name": "Diesel particulate filter odometer at last regeneration"},
+    {"id": "HYUNDAI_DIST_SINCE_DPF_REGEN",   "path": "Trips",  "fmt": {"bix": 360, "len": 32, "max": 50000,                      "div": 1000,               "unit": "kilometers" }, "name": "Distance since last DPF regeneration"},
+    {"id": "HYUNDAI_DPF_DIST_SINCE_REGEN",   "path": "Trips",  "fmt": {"bix": 360, "len": 32, "max": 4294967,                    "div": 1000,               "unit": "kilometers" }, "name": "Diesel particulate filter distance since last regeneration"},
+    {"id": "HYUNDAI_ODO_7E0",                "path": "Trips",  "fmt": {"bix": 392, "len": 32, "max": 4294967,                    "div": 1000,               "unit": "kilometers" }, "name": "Odometer"},
+    {"id": "HYUNDAI_DPF_REGEN_SUCCESS_ST",   "path": "Engine", "fmt": {"bix": 407, "len": 1,  "max": 1,                                                     "unit": "offon"      }, "name": "Diesel particulate filter regen success state"},
+    {"id": "HYUNDAI_SUCCESSFUL_REGEN_ST",    "path": "Engine", "fmt": {"bix": 424, "len": 8,  "max": 1,                                                     "unit": "scalar"     }, "name": "Successful regeneration state"},
+    {"id": "HYUNDAI_DPF_REGEN_ST",           "path": "Engine", "fmt": {"bix": 431, "len": 1,  "max": 1,                                                     "unit": "offon"      }, "name": "Diesel particulate filter regeneration state"},
+    {"id": "HYUNDAI_FUEL_CONS_SINCE_DPF",    "path": "Fuel",   "fmt": {"bix": 432, "len": 8,  "max": 319,        "mul": 1.2549,                             "unit": "liters"     }, "name": "Fuel consumption since last DPF regeneration"},
+    {"id": "HYUNDAI_DPF_REGEN_DEMAND_CNT",   "path": "Engine", "fmt": {"bix": 432, "len": 8,  "max": 255,                                                   "unit": "scalar"     }, "name": "Diesel particulate filter regen demand counter"},
+    {"id": "HYUNDAI_DPF_REGEN_CNT",          "path": "Engine", "fmt": {"bix": 440, "len": 8,  "max": 255,                                                   "unit": "scalar"     }, "name": "Diesel particulate filter regeneration count"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "ED04"}, "freq": 1,
   "signals": [
@@ -1013,7 +1027,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "fcm1": true, "dbg": true, "cmd": {"22": "ED07"}, "freq": 5,
   "signals": [
-    {"id": "HYUNDAI_EOT_7E0_V2", "path": "Engine", "fmt": {"bix": 152, "len": 8, "max": 149.9965, "min": -50, "mul": 0.7843, "add": -50, "unit": "celsius" }, "name": "Engine oil temperature", "suggestedMetric": "engineOilTemperature"}
+    {"id": "HYUNDAI_EOT_7E0_V3", "path": "Engine", "fmt": {"bix": 152, "len": 8, "max": 149.9965, "min": -50, "mul": 0.7843, "add": -50, "unit": "celsius" }, "name": "Engine oil temperature", "suggestedMetric": "engineOilTemperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "ED08"}, "freq": 5,
   "signals": [
@@ -1230,7 +1244,13 @@
     {"id": "HYUNDAI_DRIVE_MOTOR_TQ",      "path": "Engine",   "fmt": {"bix": 48,  "len": 16, "blsb": true, "max": 3276,  "min": -3276,  "div": 10,  "sign": true, "unit": "newtonMeters" }, "name": "Drive motor torque reference"},
     {"id": "HYUNDAI_DRIVE_MOTOR_TQ_ACT",  "path": "Engine",   "fmt": {"bix": 64,  "len": 16, "blsb": true, "max": 3276,  "min": -3276,  "div": 10,  "sign": true, "unit": "newtonMeters" }, "name": "Drive motor torque, actual"},
     {"id": "HYUNDAI_DRIVE_MOTOR_T",       "path": "Engine",   "fmt": {"bix": 96,  "len": 16, "blsb": true, "max": 327,   "min": -327,   "div": 100, "sign": true, "unit": "celsius"      }, "name": "Drive motor temperature"},
+    {"id": "HYUNDAI_HEAT_SINK_RAW",       "path": "Engine",   "fmt": {"bix": 344, "len": 16, "blsb": true, "max": 65535,                                          "unit": "scalar"       }, "name": "Heat sink temperature sensor count"},
     {"id": "HYUNDAI_HEAT_SINK_T_7E3",     "path": "Engine",   "fmt": {"bix": 344, "len": 16, "blsb": true, "max": 3276,  "min": -3276,  "div": 10,  "sign": true, "unit": "celsius"      }, "name": "Heat sink temperature"}
+  ]},
+{ "hdr": "7E3", "rax": "7EB", "dbg": true, "cmd": {"22": "E003"}, "freq": 5,
+  "signals": [
+    {"id": "HYUNDAI_HSG_T", "path": "Engine", "fmt": {"bix": 96,  "len": 16, "blsb": true, "max": 327, "min": -327, "div": 100, "sign": true, "unit": "celsius" }, "name": "Hybrid starter generator temperature"},
+    {"id": "HYUNDAI_GCU_T", "path": "Engine", "fmt": {"bix": 112, "len": 16, "blsb": true, "max": 327, "min": -327, "div": 100, "sign": true, "unit": "celsius" }, "name": "Generator controller temperature"}
   ]},
 { "hdr": "7E3", "rax": "7EB", "dbg": true, "cmd": {"22": "E009"}, "freq": 1,
   "signals": [
@@ -1242,6 +1262,15 @@
     {"id": "HYUNDAI_EOP_COMMANDED_SPEED",          "path": "Battery", "fmt": {"bix": 152, "len": 8, "max": 5100, "mul": 20,            "unit": "rpm"   }, "name": "Electric oil pump, commanded speed"},
     {"id": "HYUNDAI_EOP_CURRENT_DC",               "path": "Battery", "fmt": {"bix": 176, "len": 8, "max": 255,                        "unit": "amps"  }, "name": "Electric oil pump, current DC"},
     {"id": "HYUNDAI_EOP_CURRENT_IQ",               "path": "Battery", "fmt": {"bix": 184, "len": 8, "max": 255,                        "unit": "amps"  }, "name": "Electric oil pump, current IQ"}
+  ]},
+{ "hdr": "7E3", "rax": "7EB", "dbg": true, "cmd": {"22": "E100"}, "freq": 1,
+  "signals": [
+    {"id": "HYUNDAI_LOW_V_DC_DC_CONV_V",       "path": "Battery", "fmt": {"bix": 48,  "len": 16, "max": 65.53,              "div": 1000,              "unit": "volts"   }, "name": "Low voltage converter output voltage"},
+    {"id": "HYUNDAI_LOW_V_DC_DC_CONV",         "path": "Battery", "fmt": {"bix": 64,  "len": 16, "max": 655,                "div": 100,               "unit": "amps"    }, "name": "Low voltage converter output current"},
+    {"id": "HYUNDAI_LOW_V_DC_DC_CONV_INPUT_V", "path": "Battery", "fmt": {"bix": 80,  "len": 16, "max": 6553,               "div": 10,                "unit": "volts"   }, "name": "Low voltage converter input voltage"},
+    {"id": "HYUNDAI_AUX_BAT_CURRENT",          "path": "Battery", "fmt": {"bix": 112, "len": 16, "max": 328,   "min": -327, "div": 100,  "add": -327, "unit": "amps"    }, "name": "Aux battery current"},
+    {"id": "HYUNDAI_AUX_BAT_ST_CHG",           "path": "Battery", "fmt": {"bix": 128, "len": 8,  "max": 255,                                          "unit": "percent" }, "name": "Aux battery state of charge"},
+    {"id": "HYUNDAI_AUX_BAT_T",                "path": "Battery", "fmt": {"bix": 152, "len": 16, "max": 32727, "min": -40,  "div": 2,    "add": -40,  "unit": "celsius" }, "name": "Aux battery temperature"}
   ]},
 { "hdr": "7E4", "rax": "7EC", "dbg": true, "cmd": {"21": "01"}, "freq": 5,
   "signals": [
